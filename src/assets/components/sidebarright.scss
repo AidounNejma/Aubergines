@@ -13,6 +13,17 @@
     color: #818181;
     
 }
+.side-bar-left{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #1D4178;
+
+}
+
 .subscribe{
     width: 102px;
     height: 29px;
@@ -50,4 +61,9 @@
     grid-template-columns: 30% 30% 60%;
     width: 100%;
     height: 100%;
+}
+.sidebarright-container-2{
+    display: flex;
+    justify-content: space-between;
+    margin:3%;
 }

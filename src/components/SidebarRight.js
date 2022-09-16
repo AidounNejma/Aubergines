@@ -40,6 +40,12 @@ const SidebarRight = () => {
                 </div>
             </div>
             <div className='line'></div>
+            <div>
+                <div className="sidebarright-container-2">
+                    <p className="side-bar-title">Vous avez sauvegardé</p>
+                    <p className="side-bar-left">Tout voir</p>
+                </div> 
+            </div>
         </div>
     );
 };
