@@ -1,0 +1,53 @@
+.side-bar-title{
+    width: 176px;
+    height: 25px;
+    left: 1039px;
+    top: 135px;
+    
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #818181;
+    
+}
+.subscribe{
+    width: 102px;
+    height: 29px;
+    left: 1307px;
+    top: 269px;
+    background: #370B33;
+    border-radius: 15px;
+    color: #ffff;
+}
+.profil{
+    display:flex;
+    width: 172px;
+    height: 60px;
+    margin:2%;
+}
+.profil-thumbnail-img{
+    width: 40px;
+    height:40px;
+    padding-left:2%;
+    border-radius: 100px;
+}
+.button-placement{
+    margin-left:40%;
+}
+.pseudo-right{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+.newsfeed-container-test{
+    display: grid;
+    grid-template-columns: 30% 30% 60%;
+    width: 100%;
+    height: 100%;
+}
