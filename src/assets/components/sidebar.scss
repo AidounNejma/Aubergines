@@ -3,10 +3,12 @@
 .sideBar{
     background: $bg-linear;
     width: 100px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    position: absolute;
 
     .iconTop{
         img {
@@ -23,6 +25,7 @@
         
         a {
             color: $dark;
+            margin: 30% 0;
 
             &:hover{
                 color: rgba(36, 36, 36, 0.712);
@@ -31,7 +34,6 @@
 
             svg {
                 font-size: 25px;
-                margin: 20% 0;
             }
         }
         
