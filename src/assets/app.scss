@@ -8,6 +8,7 @@ $aubergine-light: #760e6dd9;
 $white : #fff;
 $semi-white: #e5e5e5;
 $grey: #808080;
+$light-grey: #f5f5f5;
 $dark: #202020;
 
 *,
@@ -25,4 +26,11 @@ body {
 
 a{
     text-decoration: none;
+}
+
+.line{
+    width: 70%;
+    height: 1px;
+    margin: 22px auto 26px auto;
+    background-color: #a6a4a4;
 }
