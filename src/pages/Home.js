@@ -1,11 +1,14 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
+import NewsFeed from '../components/NewsFeed'
 
 const Home = () => {
     return (
         <div>
-            <Sidebar/>
+            <NewsFeed/>
+            <Sidebar/>           
         </div>
+        
     );
 };
 
