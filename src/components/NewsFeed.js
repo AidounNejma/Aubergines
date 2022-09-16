@@ -6,7 +6,6 @@ import '../assets/components/newsfeed.scss'
 const NewsFeed = () => {
     return (
         <div className='newsfeed'>
-            <div className='line'></div>
             <h1>Fil d'actualités</h1>
             <div className="newsfeed-container">
                 <div className='container-post'>
