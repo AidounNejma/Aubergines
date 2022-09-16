@@ -7,15 +7,15 @@ const NewsFeed = () => {
     return (
         <div className='newsfeed'>
             <div className='line'></div>
-            <h1>Fil d'actualités</h1>           
+            <h1>Fil d'actualités</h1>
             <div className="newsfeed-container">
                 <div className='container-post'>
                     <img className="thumbnail-img" src={bbweed} alt="" />
                         <div className="thumbnail-container">
                             <img className="profil-thumbnail-img" src={bbweed} alt=""/>
-                                <div>
+                                <div className='post-informations'>
                                     <p className="pseudo">Julian Speed</p>   
-                                    <p>"Message de test user...</p> 
+                                    <p>Message de test user...</p> 
                                 </div>                     
                         </div>
                 </div>
@@ -23,9 +23,9 @@ const NewsFeed = () => {
                     <img className="thumbnail-img" src={bbweed} alt="" />
                         <div className="thumbnail-container">
                             <img className="profil-thumbnail-img" src={bbweed} alt=""/> 
-                                <div>
+                                <div className='post-informations'>
                                     <p className="pseudo">Julian Speed</p>   
-                                    <p>"Message de test user...</p> 
+                                    <p>Message de test user...</p> 
                                 </div>
                         </div> 
                 </div>  
@@ -33,9 +33,9 @@ const NewsFeed = () => {
                     <img className="thumbnail-img" src={bbweed} alt="" />
                         <div className="thumbnail-container">
                             <img className="profil-thumbnail-img" src={bbweed} alt=""/> 
-                                <div>
+                                <div className='post-informations'>
                                     <p className="pseudo">Julian Speed</p>   
-                                    <p>"Message de test user...</p> 
+                                    <p>Message de test user...</p> 
                                 </div>
                         </div> 
                 </div>    
@@ -43,9 +43,9 @@ const NewsFeed = () => {
                     <img className="thumbnail-img" src={bbweed} alt="" />
                         <div className="thumbnail-container">
                             <img className="profil-thumbnail-img" src={bbweed} alt=""/> 
-                                <div>
+                                <div className='post-informations'>
                                     <p className="pseudo">Julian Speed</p>   
-                                    <p>"Message de test user...</p> 
+                                    <p>Message de test user...</p> 
                                 </div>
                         </div> 
                 </div>                                                                             
