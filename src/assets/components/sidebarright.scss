@@ -24,11 +24,10 @@
 }
 .profil{
     display:flex;
-    width: 172px;
     height: 60px;
-    margin:2%;
+
 }
-.profil-thumbnail-img{
+.profil-thumbnail-img-sidebarrigth{
     width: 40px;
     height:40px;
     padding-left:2%;
@@ -44,6 +43,7 @@
     font-size: 12px;
     line-height: 14px;
     color: #000000;
+    padding-left:5%;
 }
 .newsfeed-container-test{
     display: grid;
