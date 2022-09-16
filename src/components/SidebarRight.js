@@ -2,12 +2,13 @@ import React from 'react';
 import '../assets/components/sidebarright.scss'
 import '../assets/components/newsfeed.scss'
 import bbweed from '../assets/img/bbweed.png';
+import SearchBar from './SearchBar';
 
 const SidebarRight = () => {
     return (
         <div>
-            <div >
-                searchbar/bell/share
+            <div>
+                <SearchBar/>
             </div>
             <div>
                 <p className="side-bar-title">les personnes à suivre</p>
