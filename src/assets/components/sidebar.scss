@@ -1,28 +1,30 @@
 @use "../app.scss" as *;
 
 .sideBar{
-    background: $bg-linear;
-    width: 100px;
+    background: linear-gradient(180deg, #370B33 0%, rgba(118, 14, 109, 0.8509803922) 100%);
+    width: 230px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
+    z-index: 0;
 
     .iconTop{
+        margin: 0 3%;
         img {
             border-radius: 50%;
-            width: 65px;
-            padding: 8%;
-            margin: 20% 0;
+            width: 58px;
+            margin: 30% 0;
         }
     }
 
     .iconsBottom{
         display: flex;
         flex-direction: column;
-        
+        margin: 0 10%;
+
         a {
             color: $dark;
             margin: 30% 0;
