@@ -1,14 +1,15 @@
 import React from 'react';
+import MainBlock from '../components/MainBlock';
+import RightBlock from '../components/RightBlock';
 import Sidebar from '../components/Sidebar';
-import NewsFeed from '../components/NewsFeed'
 
 const Home = () => {
     return (
         <div>
-            <NewsFeed/>
-            <Sidebar/>           
+            <Sidebar/>
+            <MainBlock/>
+            <RightBlock/>
         </div>
-        
     );
 };
 

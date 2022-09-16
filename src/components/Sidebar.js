@@ -10,8 +10,6 @@ const Sidebar = () => {
                 <img src={Logo} alt="" />
             </div>
 
-            <div className='emptyDiv'></div>
-            
             <div className='iconsBottom'>
                 <a href=""><FaHome /></a>
                 <a href=""><FaRegCommentDots/></a>
