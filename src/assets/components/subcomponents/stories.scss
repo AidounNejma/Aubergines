@@ -47,10 +47,19 @@
             }
         }
         
-        svg{
+        .see-more-stories{
+            border: none;
+            outline: none;
+            background-color: transparent;
             font-size: 29px;
-            color: #c2bfbf
+            color: #c2bfbf;
+            
+            &:hover{
+                color: $aubergine-light;
+                transition: 0.5s;
+            }
         }
+        
     
     }
 }

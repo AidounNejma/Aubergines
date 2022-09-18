@@ -3,7 +3,7 @@
 .rightBlock{
     position: fixed;
     width: 30%;
-    height: 620px;
+    height: 100vh;
     right: 0;
     top: 0px;
     z-index: 6;
@@ -34,6 +34,12 @@
                     border: 1px solid currentColor;
                     border-radius: 25px;
                     width: 65%;
+
+                    &:focus-within{
+                        outline: 2px solid $aubergine-light;
+                        border: 1px solid transparent;
+                        transition: 0.1s;
+                    }
             
                     input[type="search"] {
                         border: none;

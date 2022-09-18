@@ -13,13 +13,17 @@ const Stories = () => {
     return (
         <div className='stories-wrapper'>
             <div className='stories-container'>
-                    <PicturesProfile image={images[0]} name="Kristen Mackenzie" available={'storie-available'}/>
-                    <PicturesProfile image={images[1]} name="Mily Arthur" />
-                    <PicturesProfile image={images[2]} name="Julian Speed" available={'storie-available'} />
-                    <PicturesProfile image={images[3]} name="Sveltlana Flasuova" available={'storie-available'} />
-                    <PicturesProfile image={images[4]} name="Kylie Mansour " />
-                    <PicturesProfile image={images[5]} name="Pam Anderson" />
-                <FaPlusCircle/>
+
+                <PicturesProfile image={images[0]} name="Kristen Mackenzie" available={'storie-available'}/>
+                <PicturesProfile image={images[1]} name="Mily Arthur" />
+                <PicturesProfile image={images[2]} name="Julian Speed" available={'storie-available'} />
+                <PicturesProfile image={images[3]} name="Sveltlana Flasuova" available={'storie-available'} />
+                <PicturesProfile image={images[4]} name="Kylie Mansour " />
+                <PicturesProfile image={images[5]} name="Pam Anderson" />
+
+                <button type='button' className='see-more-stories'>
+                    <FaPlusCircle/>
+                </button>
             </div>
         </div>
     );
