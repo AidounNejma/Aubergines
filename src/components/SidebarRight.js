@@ -1,25 +1,22 @@
 import React from 'react';
 import '../assets/components/sidebar-right.scss'
-import bbweed from '../assets/img/bbweed.png';
-import SearchBar from './Jsx-components/SearchBar';
-import TitleSection from './Jsx-components/TitleSection';
-import Follow from './Jsx-components/Follow';
-import ThumbnailsSaved from './Jsx-components/ThumbnailsSaved';
-import LastActivites from './Jsx-components/LastActivites';
+import SearchBar from './jsx-components/SearchBar';
+import TitleSection from './jsx-components/TitleSection';
+import Follow from './jsx-components/Follow';
+import ThumbnailsSaved from './jsx-components/ThumbnailsSaved';
+import LastActivites from './jsx-components/LastActivites';
 import { FaBookmark, FaHeart, FaRegCommentDots } from 'react-icons/fa';
+import {importAll} from './functions/ImportImages';
 
 const SidebarRight = () => {
 
-     /* Import de toutes les images */
-    function importAll(r) {
-        let images = {};
-        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-        return images;
-    }
-    
-    const images = importAll(require.context(`../assets/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
+    /* Import de mes images */
+    const image = importAll(require.context(`../assets/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
+    const images = Object.values(image);
 
-    const objects = Object.values(images);
+    /* Import profile pictures */
+    const profile = importAll(require.context(`../assets/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
+    const profiles = Object.values(profile);
 
     return (
         <div className='rightBlock'>
@@ -29,19 +26,19 @@ const SidebarRight = () => {
 
                 <TitleSection title="Les personnes à suivre"/>
                 
-                <Follow image={bbweed} name="Julian Speed" />
-                <Follow image={bbweed} name="Kristen Mackenzie"/>
-                <Follow image={bbweed} name="Sveltlana Flasuova" />
+                <Follow image={profiles[0]} name="Julian Speed" />
+                <Follow image={profiles[1]} name="Kristen Mackenzie"/>
+                <Follow image={profiles[2]} name="Sveltlana Flasuova" />
                 
                 <div className='line'></div>
 
                 <TitleSection title="Vous avez sauvegardé"/>
 
                 <div className='thumbnail-saved'>
-                    <ThumbnailsSaved image={objects[0]} />
-                    <ThumbnailsSaved image={objects[1]} />
-                    <ThumbnailsSaved image={objects[2]} />
-                    <ThumbnailsSaved image={objects[3]} />
+                    <ThumbnailsSaved image={images[0]} />
+                    <ThumbnailsSaved image={images[1]} />
+                    <ThumbnailsSaved image={images[2]} />
+                    <ThumbnailsSaved image={images[3]} />
                 </div>
 
                 <div className='line'></div>
