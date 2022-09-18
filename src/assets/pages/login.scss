@@ -4,7 +4,6 @@
     display: flex;
 
     .left-block-wrapper, .login-form-wrapper{
-        width: 50%;
         height: 100vh;
     }
 
@@ -12,6 +11,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 60%;
 
         .title-left-block, .subtitle-left-block, .icon-home{
             color: $white;
