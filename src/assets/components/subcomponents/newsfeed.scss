@@ -1,7 +1,7 @@
-@use "../app.scss" as *;
+@use "../../app.scss" as *;
 
 .newsfeed{
-    width: 65%;
+    width: 100%;
 
     h1{
         margin: 0 0% 3% 9%;
@@ -46,10 +46,6 @@
                     .pseudo{
                         width:72px;
                         height:14px;
-                        left: 8.7%;
-                        right: 82.22%;
-                        top: 43.44%;
-                        bottom: 54.7%;
                         font-family: 'Raleway';
                         font-style: normal;
                         font-weight: 400;

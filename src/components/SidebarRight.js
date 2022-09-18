@@ -1,46 +1,28 @@
 import React from 'react';
-import '../assets/components/sidebarright.scss'
-import '../assets/components/newsfeed.scss'
+import '../assets/components/sidebar-right.scss'
 import bbweed from '../assets/img/bbweed.png';
 import SearchBar from './SearchBar';
+import TitleSection from './Jsx-components/TitleSection';
+import Follow from './Jsx-components/Follow';
 
 const SidebarRight = () => {
     return (
-        <div>
-            <div>
+        <div className='rightBlock'>
+            <div className='sidebar-right'>
+            
                 <SearchBar/>
+
+                <TitleSection title="Les personnes à suivre"/>
+                
+                <Follow image={bbweed} name="Julian Speed" />
+                <Follow image={bbweed} name="Kristen Mackenzie"/>
+                <Follow image={bbweed} name="Sveltlana Flasuova" />
+                
+                <div className='line'></div>
+
+                <TitleSection title="Vous avez sauvegardé"/>
+
             </div>
-            <div>
-                <p className="side-bar-title">les personnes à suivre</p>
-            </div>           
-            <div className="newsfeed-container-test">
-                <div className="profil">
-                    <img className="profil-thumbnail-img-sidebarrigth" src={bbweed} alt=""/>
-                    <p className="pseudo-right">Julian Speed</p>
-                        <div className="button-placement">
-                            <button className="subscribe">s'abonner</button>
-                        </div>                    
-                </div>
-            </div>         
-            <div className="newsfeed-container-test">
-                <div className="profil">
-                    <img className="profil-thumbnail-img-sidebarrigth" src={bbweed} alt=""/>
-                    <p className="pseudo-right">Eva Langoria</p>
-                        <div className="button-placement">
-                            <button className="subscribe">s'abonner</button>
-                        </div>                    
-                </div>
-            </div>          
-            <div className="newsfeed-container-test">
-                <div className="profil">
-                    <img className="profil-thumbnail-img-sidebarrigth" src={bbweed} alt=""/>
-                    <p className="pseudo-right">Clara Anagrom</p>
-                        <div className="button-placement">
-                            <button className="subscribe">s'abonner</button>
-                        </div>                    
-                </div>
-            </div>
-            <div className='line'></div>
         </div>
     );
 };

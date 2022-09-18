@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
-import '../assets/components/stories.scss';
+import '../assets/components/subcomponents/stories.scss';
 const Stories = () => {
     function importAll(r) {
         let images = {};

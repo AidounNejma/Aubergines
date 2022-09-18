@@ -1,5 +1,7 @@
+@use "../../app.scss" as *;
+
 .stories-wrapper{
-    width: 65%;
+    width: 100%;
 
     .stories-container{
         display: flex;
@@ -26,11 +28,11 @@
                 margin-top: 3%;
             }
         }
+        
         svg{
             font-size: 29px;
             color: #c2bfbf
         }
-        
     
     }
 }

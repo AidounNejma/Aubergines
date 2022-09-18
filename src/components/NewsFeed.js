@@ -1,6 +1,6 @@
 import React from 'react';
 import bbweed from '../assets/img/bbweed.png';
-import '../assets/components/newsfeed.scss'
+import '../assets/components/subcomponents/newsfeed.scss'
 
 
 const NewsFeed = () => {

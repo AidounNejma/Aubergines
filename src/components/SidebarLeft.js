@@ -1,9 +1,9 @@
 import React from 'react';
 import Logo from '../assets/img/logo.png';
 import { FaHome, FaUserAlt, FaRegCommentDots, FaStar, FaCog } from 'react-icons/fa';
-import '../assets/components/sidebar.scss'
+import '../assets/components/sidebar-left.scss'
 
-const Sidebar = () => {
+const SidebarLeft = () => {
     return (
         <div className='sideBar'>
             <div className='iconTop'>
@@ -21,4 +21,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default SidebarLeft;
