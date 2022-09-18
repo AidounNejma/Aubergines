@@ -1,0 +1,57 @@
+@use '../app.scss' as *;
+
+.login-wrapper{
+    display: flex;
+
+    .left-block-wrapper, .login-form-wrapper{
+        width: 50%;
+        height: 100vh;
+    }
+
+    .left-block-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title-left-block, .subtitle-left-block, .icon-home{
+            color: $white;
+            text-align: center;
+        }
+
+        .title-left-block, .subtitle-left-block{
+            text-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .title-left-block{
+            margin: 8% auto;
+            padding: 0 16%;
+            font-size: 1.7rem;
+        }
+
+        .wrapper-subtitle-icon{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 4%;
+
+            .subtitle-left-block{
+                font-size: 1.3rem;
+            }
+
+            .icon-home{
+                margin-top: 6%;
+                font-size: 1.5rem;
+                color: $aubergine-dark;
+    
+                &:hover{
+                    color: $white;
+                    transition: 0.5s;
+                }
+            }
+        }
+        
+    }
+
+    
+
+}

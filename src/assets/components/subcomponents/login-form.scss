@@ -1,0 +1,116 @@
+@use '../../app.scss' as *;
+
+.login-form-wrapper{
+    background-color: $light-grey;
+    border-radius: 24px 0 0 24px;
+
+    .login-form-container{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 3%;
+
+        img{
+            width: 8em;
+            border-radius: 30px;
+            height: 6em;
+            object-fit: cover;
+            margin-top: 2%;
+        }
+
+        .login-form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+
+            .input-login{
+                border: none;
+                padding: 3%;
+                margin: 2% 0;
+                border-radius: 10px;
+                width: 80%;
+
+                &:focus{
+                    outline: 2px solid $aubergine-light;
+                }
+            }
+
+            .wrapper-submit-form{
+                width: 80%;
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 2%;
+
+                .submit-login-form{
+                    border: none;
+                    border-radius: 24px;
+                    background-color: $aubergine-dark;
+                    color: $white;
+                    padding: 2%;
+                    width: 140px;
+                    font-size: 1.1rem;
+
+                    &:hover{
+                        background-color: $aubergine-light;
+                        transition: 0.5s;
+                    }
+                }
+            }
+            
+            .wrapper-remember-me{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 80%;
+                margin: 2% 0;
+
+                label{
+                    margin-left: 1%;
+                    cursor: pointer;
+                }
+
+                a{
+                    margin-left: 4%;
+                    color: $dark;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    .join-aubergines{
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .wrapper-link-register{
+        display: flex;
+        justify-content: center;
+        margin-top: 3%;
+
+        .link-register{
+            width: 150px;
+            background-color: #370B33;
+            color: #fff;
+            padding: 2%;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+
+            &:hover{
+                background-color: $aubergine-light;
+                transition: 0.5s;
+            }
+        }
+
+    }
+    
+}

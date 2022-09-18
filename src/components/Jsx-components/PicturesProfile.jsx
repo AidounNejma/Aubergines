@@ -1,12 +1,12 @@
 import React from 'react';
 
-const PicturesProfile = ({image, name}) => {
+const PicturesProfile = ({image, name, available}) => {
     return (
-        <div className='container-profile'>
-            <div style={{background: `url(${image})`}} className='profile-img'>
+        <button className='container-profile'>
+            <div style={{background: `url(${image})`}} className={'profile-img ' + available }>
             </div>
             <p>{name}</p>
-        </div>
+        </button>
     );
 };
 

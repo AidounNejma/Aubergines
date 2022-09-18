@@ -24,6 +24,7 @@ const SidebarRight = () => {
             
                 <SearchBar/>
 
+                <div className='block-scrollable'>
                 <TitleSection title="Les personnes à suivre"/>
                 
                 <Follow image={profiles[0]} name="Julian Speed" />
@@ -50,7 +51,7 @@ const SidebarRight = () => {
                     <LastActivites text="Vous avez commenté le post de Ahmed" icon={<FaRegCommentDots className='comments'/>}/>
                     <LastActivites text="Vous avez sauvegardé le post de Kylie" icon={<FaBookmark className='saved'/>}/>
                 </div>
-
+                </div>
             </div>
         </div>
     );

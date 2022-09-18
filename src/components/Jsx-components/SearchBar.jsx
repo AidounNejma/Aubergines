@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaRegBell, FaUpload } from 'react-icons/fa';
+import { FaRegBell, FaTimes, FaUpload } from 'react-icons/fa';
 
 const SearchBar = () => {
     return (
@@ -9,12 +9,15 @@ const SearchBar = () => {
                     <input type="search" placeholder="Search..."/>
                     <button type="submit">Search</button>
                 </form>
-                <div className='icons-searchbar'>
+                <button className='icons-searchbar'>
                     <FaRegBell/>
-                </div>
-                <div className='icons-searchbar'>
+                </button>
+                <button className='icons-searchbar'>
                     <FaUpload/>
-                </div>
+                </button>
+                <button className='icons-searchbar'>
+                    <FaTimes/>
+                </button>
             </div>
         </div>
     );

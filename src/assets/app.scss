@@ -22,10 +22,20 @@ $dark: #202020;
 body {
     margin: 0;
     font-family: 'Raleway';
+    background: linear-gradient(180deg, #370B33 0%, rgba(118, 14, 109, 0.8509803922) 100%);
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 a{
     text-decoration: none;
+}
+
+button{
+    cursor: pointer;
 }
 
 .line{
