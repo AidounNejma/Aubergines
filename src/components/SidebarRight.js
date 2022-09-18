@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/components/sidebar-right.scss'
 import bbweed from '../assets/img/bbweed.png';
-import SearchBar from './SearchBar';
+import SearchBar from './Jsx-components/SearchBar';
 import TitleSection from './Jsx-components/TitleSection';
 import Follow from './Jsx-components/Follow';
 

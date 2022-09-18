@@ -1,59 +1,35 @@
 @use "../../app.scss" as *;
 
-.newsfeed{
-    width: 100%;
+.container-post{
+    margin: 2% auto;
 
-    h1{
-        margin: 0 0% 3% 9%;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 23px;
-        color: $dark;
+    .thumbnail-img{
+        width: 300px;
+        height: 200px;
+        bottom: 58.68%;
+        filter: drop-shadow(5px 10px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 35px;
     }
 
-    .newsfeed-container{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        width: 100%;
-        height: 100%;
+    .thumbnail-container{
+        padding-top:3%;
+        display: flex;
 
-        .container-post{
-            margin: 2% auto;
+        .profil-thumbnail-img{
+            width: 40px;
+            height:40px;
+            left: 0%;
+            border-radius: 100px;
+        }
 
-            .thumbnail-img{
-                width: 300px;
-                height: 200px;
-                bottom: 58.68%;
-                filter: drop-shadow(5px 10px 4px rgba(0, 0, 0, 0.25));
-                border-radius: 35px;
-            }
+        .post-informations{
+            margin-left: 3%;
 
-            .thumbnail-container{
-                padding-top:3%;
-                display: flex;
-
-                .profil-thumbnail-img{
-                    width: 40px;
-                    height:40px;
-                    left: 0%;
-                    border-radius: 100px;
-                }
-
-                .post-informations{
-                    margin-left: 3%;
-
-                    .pseudo{
-                        width:72px;
-                        height:14px;
-                        font-family: 'Raleway';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 12px;
-                        line-height: 14px;
-                        color: #000000;
-                    }
-                }
+            .pseudo{
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                color: #000000;
             }
         }
     }
