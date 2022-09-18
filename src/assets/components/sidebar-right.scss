@@ -7,8 +7,9 @@
     right: 0;
     top: 0px;
     z-index: 6;
-    background-color: #F5F5F5;
+    background-color: $light-grey;
     border-radius: 20px 0 0 20px;
+    overflow: scroll;
 
     .sidebar-right{
         padding: 4%;
@@ -67,7 +68,7 @@
             }
         
             .icons-searchbar{
-                border: 1px solid grey;
+                border: 1px solid $grey;
                 padding: 10px;
                 border-radius: 50%;
                 margin: 0 0% 0 4%;
@@ -93,6 +94,10 @@
                 font-size: 12px;
                 font-weight: 600;
                 color: #1D4178;
+
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -120,8 +125,6 @@
                     }
 
                     .username-right{
-                        font-family: 'Raleway';
-                        font-style: normal;
                         font-weight: 400;
                         font-size: 12px;
                         color: #000000;
@@ -134,11 +137,66 @@
                     .subscribe{
                         width: 102px;
                         height: 29px;
-                        background: #370B33;
+                        background-color: $aubergine-dark;
                         border-radius: 15px;
-                        color: #ffff;
+                        color: $white;
                         border: none;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: $aubergine-light;
+                            transition: 0.5s;
+                        }
                     }
+                }
+            }
+        }
+
+        .thumbnail-saved{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .thumbnail{
+                width: 35%;
+                height: 90px;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+                border-radius: 15px;
+                background-position: center !important;
+                margin: 2% 0;
+            }
+        }
+
+        .wrapper-activities{
+            margin: 0 4%;
+
+            .last-activities{
+                display: flex;
+                align-items: center;
+                margin: 2% 0;
+    
+                svg{
+                    margin-right: 2%;
+                    font-size: 18px;
+                }
+
+                .heart{
+                    color: red;
+                }
+
+                .comments{
+                    color: #669AB8;
+                }
+
+                .saved{
+                    color: #51A869;
+                }
+
+                .text-last-activity{
+                    font-weight: 500;
+                    font-size: 13px;
                 }
             }
         }

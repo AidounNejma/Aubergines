@@ -3,10 +3,10 @@ import bbweed from '../../assets/img/bbweed.png';
 import '../../assets/components/subcomponents/newsfeed.scss'
 
 
-const NewsFeed = ({name, message}) => {
+const NewsFeed = ({name, message, image}) => {
     return (
         <div className='container-post'>
-            <img className="thumbnail-img" src={bbweed} alt="" />
+            <img className="thumbnail-img" src={image} alt="" />
             <div className="thumbnail-container">
                 <img className="profil-thumbnail-img" src={bbweed} alt=""/>
                     <div className='post-informations'>

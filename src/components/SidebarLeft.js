@@ -11,11 +11,11 @@ const SidebarLeft = () => {
             </div>
 
             <div className='iconsBottom'>
-                <a href=""><FaHome /></a>
-                <a href=""><FaRegCommentDots/></a>
-                <a href=""><FaUserAlt/></a>
-                <a href=""><FaStar/></a>
-                <a href=""><FaCog/></a>
+                <a href="/"><FaHome /></a>
+                <a href="/"><FaRegCommentDots/></a>
+                <a href="/"><FaUserAlt/></a>
+                <a href="/"><FaStar/></a>
+                <a href="/"><FaCog/></a>
             </div>
         </div>
     );
