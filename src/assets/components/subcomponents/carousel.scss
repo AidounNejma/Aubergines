@@ -1,0 +1,13 @@
+@use "../../app.scss" as *;
+
+.container-carousel{
+    width: 100%;
+
+    .react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content img{
+        border-radius: 22px;
+        height: 300px;
+        object-fit: cover;
+        width: 100%;
+        cursor: grab;
+    }
+}

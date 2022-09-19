@@ -1,0 +1,40 @@
+@use "../../app.scss" as *;
+
+.container-post{
+    margin: 2% auto;
+
+    .thumbnail-img{
+        width: 300px;
+        height: 200px;
+        bottom: 58.68%;
+        filter: drop-shadow(5px 10px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 35px;
+        object-fit: cover;
+    }
+
+    .thumbnail-container{
+        padding-top:3%;
+        display: flex;
+
+        .profil-thumbnail-img{
+            width: 40px;
+            height:40px;
+            left: 0%;
+            border-radius: 100px;
+            object-fit: cover;
+        }
+
+        .post-informations{
+            margin-left: 3%;
+
+            .pseudo{
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                color: #000000;
+            }
+        }
+    }
+}
+
+

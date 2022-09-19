@@ -1,50 +1,57 @@
 import React from 'react';
-import '../assets/components/sidebarright.scss'
-import '../assets/components/newsfeed.scss'
-import bbweed from '../assets/img/bbweed.png';
+import '../assets/components/sidebar-right.scss'
+import SearchBar from './jsx-components/SearchBar';
+import TitleSection from './jsx-components/TitleSection';
+import Follow from './jsx-components/Follow';
+import ThumbnailsSaved from './jsx-components/ThumbnailsSaved';
+import LastActivites from './jsx-components/LastActivites';
+import { FaBookmark, FaHeart, FaRegCommentDots } from 'react-icons/fa';
+import {importAll} from './functions/ImportImages';
 
 const SidebarRight = () => {
+
+    /* Import de mes images */
+    const image = importAll(require.context(`../assets/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
+    const images = Object.values(image);
+
+    /* Import profile pictures */
+    const profile = importAll(require.context(`../assets/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
+    const profiles = Object.values(profile);
+
     return (
-        <div>
-            <div >
-                searchbar/bell/share
-            </div>
-            <div>
-                <p className="side-bar-title">les personnes à suivre</p>
-            </div>           
-            <div className="newsfeed-container-test">
-                <div className="profil">
-                    <img className="profil-thumbnail-img-sidebarrigth" src={bbweed} alt=""/>
-                    <p className="pseudo-right">Julian Speed</p>
-                        <div className="button-placement">
-                            <button className="subscribe">s'abonner</button>
-                        </div>                    
+        <div className='rightBlock'>
+            <div className='sidebar-right'>
+            
+                <SearchBar/>
+
+                <div className='block-scrollable'>
+                <TitleSection title="Les personnes à suivre"/>
+                
+                <Follow image={profiles[0]} name="Julian Speed" />
+                <Follow image={profiles[1]} name="Kristen Mackenzie"/>
+                <Follow image={profiles[2]} name="Sveltlana Flasuova" />
+                
+                <div className='line'></div>
+
+                <TitleSection title="Vous avez sauvegardé"/>
+
+                <div className='thumbnail-saved'>
+                    <ThumbnailsSaved image={images[0]} />
+                    <ThumbnailsSaved image={images[1]} />
+                    <ThumbnailsSaved image={images[2]} />
+                    <ThumbnailsSaved image={images[3]} />
                 </div>
-            </div>         
-            <div className="newsfeed-container-test">
-                <div className="profil">
-                    <img className="profil-thumbnail-img-sidebarrigth" src={bbweed} alt=""/>
-                    <p className="pseudo-right">Eva Langoria</p>
-                        <div className="button-placement">
-                            <button className="subscribe">s'abonner</button>
-                        </div>                    
+
+                <div className='line'></div>
+
+                <TitleSection title="Dernières activités"/>
+
+                <div className='wrapper-activities'>
+                    <LastActivites text="Vous avez aimé le post de Virginie" icon={<FaHeart className='heart'/>}/>
+                    <LastActivites text="Vous avez commenté le post de Ahmed" icon={<FaRegCommentDots className='comments'/>}/>
+                    <LastActivites text="Vous avez sauvegardé le post de Kylie" icon={<FaBookmark className='saved'/>}/>
                 </div>
-            </div>          
-            <div className="newsfeed-container-test">
-                <div className="profil">
-                    <img className="profil-thumbnail-img-sidebarrigth" src={bbweed} alt=""/>
-                    <p className="pseudo-right">Clara Anagrom</p>
-                        <div className="button-placement">
-                            <button className="subscribe">s'abonner</button>
-                        </div>                    
                 </div>
-            </div>
-            <div className='line'></div>
-            <div>
-                <div className="sidebarright-container-2">
-                    <p className="side-bar-title">Vous avez sauvegardé</p>
-                    <p className="side-bar-left">Tout voir</p>
-                </div> 
             </div>
         </div>
     );

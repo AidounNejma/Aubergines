@@ -1,0 +1,43 @@
+@use "../app.scss" as *;
+
+.sideBar{
+
+    width: 230px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 0;
+
+    .iconTop{
+        margin: 0 3%;
+        img {
+            border-radius: 50%;
+            width: 58px;
+            margin: 30% 0;
+        }
+    }
+
+    .iconsBottom{
+        display: flex;
+        flex-direction: column;
+        margin: 0 10%;
+
+        a {
+            color: $dark;
+            margin: 30% 0;
+
+            &:hover{
+                color: rgba(36, 36, 36, 0.712);
+                transition: 0.5s;
+            }
+
+            svg {
+                font-size: 25px;
+            }
+        }
+        
+    }
+}

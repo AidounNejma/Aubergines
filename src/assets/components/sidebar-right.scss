@@ -1,0 +1,239 @@
+@use "../app.scss" as *;
+
+.rightBlock{
+    position: fixed;
+    width: 30%;
+    height: 100vh;
+    right: 0;
+    top: 0px;
+    z-index: 6;
+    background-color: $light-grey;
+    border-radius: 45px 0 0 0;
+    overflow: scroll;
+
+    .sidebar-right{
+
+        .searchBar-wrapper{
+            position: fixed;
+            width: -webkit-fill-available;
+            background: whitesmoke;
+            border-radius: 45px 0 0 0;
+            top: 0px;
+            padding: 2%;
+
+            /* Barre de recherche */
+            .searchbar-container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            
+                form {
+                    color: #bbb6b6;
+                    display: flex;
+                    padding: 2px;
+                    border: 1px solid currentColor;
+                    border-radius: 25px;
+                    width: 65%;
+
+                    &:focus-within{
+                        outline: 2px solid $aubergine-light;
+                        border: 1px solid transparent;
+                        transition: 0.1s;
+                    }
+            
+                    input[type="search"] {
+                        border: none;
+                        background: transparent;
+                        margin: 0;
+                        padding: 7px 8px;
+                        font-size: 14px;
+                        color: inherit;
+                        border: 1px solid transparent;
+                        border-radius: inherit;
+                        width: 100%;
+                    }
+                    
+                    input[type="search"]::placeholder {
+                        color: #bbb;
+                    }
+            
+                    button[type="submit"] {
+                        text-indent: -999px;
+                        overflow: hidden;
+                        width: 40px;
+                        padding: 0;
+                        margin: 0;
+                        border: 1px solid transparent;
+                        border-radius: inherit;
+                        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+                        opacity: 0.7;
+                    }
+                    
+                    button[type="submit"]:hover {
+                        opacity: 1;
+                    }
+            
+                    button[type="submit"]:focus,
+                    input[type="search"]:focus {
+                        outline: none;
+                    }
+                }
+            
+                .icons-searchbar{
+                    border: 1px solid #531a4d;
+                    color: #531a4d;
+                    border-radius: 50%;
+                    height: 30px;
+                    background: none;
+                    width: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover{
+                        background-color: #531a4d;
+                        color: $white;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+        
+
+        .block-scrollable{
+            overflow: scroll;
+            height: 100%;
+            width: 100%;
+            padding: 95px 5% 5% 5%;
+
+            /* Titres des sections  */
+            .title-wrapper{
+                display: flex;
+                justify-content: space-between;
+                margin: 3% 0;
+
+                .title-section {
+                    width: 176px;
+                    height: 25px;
+                    font-family: 'Raleway';
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #818181;
+                }
+
+                .link-see-all{
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: #1D4178;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            /* Blocs de souscription à un compte */
+            .newsfeed-container{
+                width: 100%;
+                height: 100%;
+                margin: 3% 0;
+
+                .profil{
+                    display:flex;
+                    justify-content: space-between;
+                    margin: 0 4%;
+
+                    .wrapper-img-username{
+                        display: flex;
+                        width: 50%;
+                        align-items: center;
+
+                        .profil-thumbnail-img{
+                            width: 40px;
+                            height:40px;
+                            border-radius: 100px;
+                            object-fit: cover;
+                        }
+
+                        .username-right{
+                            font-weight: 400;
+                            font-size: 12px;
+                            color: #000000;
+                            padding-left:5%;
+                        }
+                    }
+                    
+                    .button-placement{
+
+                        .subscribe{
+                            width: 102px;
+                            height: 29px;
+                            background-color: $aubergine-dark;
+                            border-radius: 15px;
+                            color: $white;
+                            border: none;
+
+                            &:hover{
+                                background-color: $aubergine-light;
+                                transition: 0.5s;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .thumbnail-saved{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+
+                .thumbnail{
+                    width: 35%;
+                    height: 90px;
+                    background-size: cover !important;
+                    background-repeat: no-repeat !important;
+                    border-radius: 15px;
+                    background-position: center !important;
+                    margin: 2% 0;
+                }
+            }
+
+            .wrapper-activities{
+                margin: 0 4%;
+
+                .last-activities{
+                    display: flex;
+                    align-items: center;
+                    margin: 2% 0;
+        
+                    svg{
+                        margin-right: 2%;
+                        font-size: 18px;
+                    }
+
+                    .heart{
+                        color: red;
+                    }
+
+                    .comments{
+                        color: #669AB8;
+                    }
+
+                    .saved{
+                        color: #51A869;
+                    }
+
+                    .text-last-activity{
+                        font-weight: 500;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
