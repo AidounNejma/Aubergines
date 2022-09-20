@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaRegBell, FaTimes, FaUpload } from 'react-icons/fa';
 
-const SearchBar = () => {
+const SearchBar = ({setIsOpened}) => {
+
     return (
         <div className='searchBar-wrapper'>
             <div className='searchbar-container'>
@@ -15,7 +16,7 @@ const SearchBar = () => {
                 <button className='icons-searchbar'>
                     <FaUpload/>
                 </button>
-                <button className='icons-searchbar'>
+                <button className='icons-searchbar' onClick={() => setIsOpened(false)}>
                     <FaTimes/>
                 </button>
             </div>

@@ -8,7 +8,7 @@ import LastActivites from './jsx-components/LastActivites';
 import { FaBookmark, FaHeart, FaRegCommentDots } from 'react-icons/fa';
 import {importAll} from './functions/ImportImages';
 
-const SidebarRight = () => {
+const SidebarRight = ({opened, setIsOpened}) => {
 
     /* Import de mes images */
     const image = importAll(require.context(`../assets/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
@@ -19,10 +19,10 @@ const SidebarRight = () => {
     const profiles = Object.values(profile);
 
     return (
-        <div className='rightBlock'>
+        <div className={`rightBlock ${opened ? 'in' : 'out'}`}>
             <div className='sidebar-right'>
             
-                <SearchBar/>
+                <SearchBar setIsOpened={setIsOpened}/>
 
                 <div className='block-scrollable'>
                 <TitleSection title="Les personnes à suivre"/>

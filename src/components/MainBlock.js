@@ -3,8 +3,9 @@ import '../assets/components/mainblock.scss';
 import NewsFeed from './jsx-components/NewsFeed';
 import Stories from './jsx-components/Stories';
 import {importAll} from './functions/ImportImages';
+import { FaGripHorizontal } from 'react-icons/fa';
 
-const MainBlock = () => {
+const MainBlock = ({openSideBar}) => {
 
     /* Import de mes images */
     const image = importAll(require.context(`../assets/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
@@ -14,12 +15,20 @@ const MainBlock = () => {
     const profile = importAll(require.context(`../assets/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
     const profiles = Object.values(profile);
 
+    const toggleSidebar = () => {
+        openSideBar(true);
+    }
+
     return (
 
         <div className='mainBlock'>
             
             <div className='wrapper-main-block'>
-                <Stories/>
+                <div className='wrapper-stories-button'>
+                    <Stories/>
+                    <button onClick={toggleSidebar} className='button-toggle-sidebar'><FaGripHorizontal/></button>
+                </div>
+                
 
                 <div className='line'></div>
 

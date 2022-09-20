@@ -5,17 +5,19 @@ import '../assets/components/sidebar-left.scss'
 
 const SidebarLeft = () => {
     return (
-        <div className='sideBar'>
-            <div className='iconTop'>
-                <img src={Logo} alt="" />
-            </div>
+        <div className='container-sidebar'>
+            <div className='sideBar'>
+                <div className='iconTop'>
+                    <img src={Logo} alt="" />
+                </div>
 
-            <div className='iconsBottom'>
-                <a href="/"><FaHome /></a>
-                <a href="/"><FaRegCommentDots/></a>
-                <a href="/"><FaUserAlt/></a>
-                <a href="/"><FaStar/></a>
-                <a href="/"><FaCog/></a>
+                <div className='iconsBottom'>
+                    <a href="/"><FaHome /></a>
+                    <a href="/"><FaRegCommentDots/></a>
+                    <a href="/"><FaUserAlt/></a>
+                    <a href="/"><FaStar/></a>
+                    <a href="/"><FaCog/></a>
+                </div>
             </div>
         </div>
     );

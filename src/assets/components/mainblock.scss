@@ -1,18 +1,17 @@
 @use "../app.scss" as *;
 
 .mainBlock{
-    position: fixed;
-    width: 95%;
+    position: relative;
+    width: 100%;
     height: 100vh;
-    left: 80px;
     top: 0px;
-    z-index: 6;
+    z-index: 3;
     background-color: white;
     border-radius: 45px 0 0 0;
     overflow: scroll;
 
     .wrapper-main-block{
-        width: 68%;
+        width: 100%;
 
         .title-timeline {
             margin: 0 0% 3% 9%;
@@ -24,11 +23,33 @@
         }
     
         .newsfeed-container{
-            display: grid;
-            grid-template-columns: 50% 50%;
+            display: flex;
+            flex-wrap: wrap;
             width: 100%;
             height: 100%;
+        }
+
+        .wrapper-stories-button{
+            display: flex;
+
+            .button-toggle-sidebar{
+                border: none;
+                outline: none;
+                width: 50px;
+                position: absolute;
+                top: 5%;
+                right: 4%;
+                background: $aubergine-light;
+                color: white;
+                border-radius: 50%;
+                padding: 12px 10px;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 
 }
+

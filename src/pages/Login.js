@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import CarouselEdition from '../components/jsx-components/CarouselEdition';
-import '../assets/pages/login.scss';
+import '../assets/pages/login-register.scss';
 import LoginForm from '../components/jsx-components/LoginForm';
 
 
@@ -31,7 +31,7 @@ const Login = () => {
                 <p className='join-aubergines'>Rejoignez Aubergines maintenant !</p>
 
                 <div className='wrapper-link-register'>
-                    <a href="/" className='link-register'>Inscription</a>
+                    <a href="/inscription" className='link-register'>Inscription</a>
                 </div>
                 
             </div>

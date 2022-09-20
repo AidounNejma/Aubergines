@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../assets/components/subcomponents/picture-profile.scss';
 
 const PicturesProfile = ({image, name, available}) => {
     return (

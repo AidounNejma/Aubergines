@@ -1,17 +1,30 @@
 @use '../../app.scss' as *;
 
-.login-form-wrapper{
+.login-form-wrapper, .register-form-wrapper{
     background-color: $light-grey;
     border-radius: 24px 0 0 24px;
     width: 40%;
 
-    .login-form-container{
+    .login-form-container, .register-form-container{
 
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding-bottom: 3%;
+
+        /* Register */
+        .container-title-form-register{
+            display: flex;
+            justify-content: flex-start;
+            width: 80%;
+            margin-top: 2%;
+            .title-form-register{
+                font-weight: 300;
+                font-size: 1.3rem;
+                width: 200px;
+            }
+        }
+        /* Fin Register */
 
         img{
             width: 8em;
@@ -21,13 +34,13 @@
             margin-top: 2%;
         }
 
-        .login-form{
+        .login-form, .register-form{
             display: flex;
             flex-direction: column;
             width: 100%;
             align-items: center;
 
-            .input-login{
+            .input-login, .input-register{
                 border: none;
                 padding: 3%;
                 margin: 2% 0;
@@ -45,7 +58,7 @@
                 justify-content: flex-end;
                 margin-top: 2%;
 
-                .submit-login-form{
+                .submit-login-form, .submit-register-form{
                     border: none;
                     border-radius: 24px;
                     background-color: $aubergine-dark;
@@ -86,9 +99,17 @@
         
     }
 
-    .join-aubergines{
+    .login-form-container{
+        padding-bottom: 3%;
+    }
+
+    .join-aubergines, .already-member{
         text-align: center;
         font-size: 1.2rem;
+    }
+
+    .join-aubergines{
+        margin-top: 10%;
     }
 
     .wrapper-link-register{
