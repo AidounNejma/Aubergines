@@ -4,9 +4,13 @@ import CarouselEdition from '../components/jsx-components/CarouselEdition';
 import '../assets/pages/login.scss';
 import LoginForm from '../components/jsx-components/LoginForm';
 
+import UseAnimations from 'react-useanimations';
+import home from 'react-useanimations/lib/home'
+
 
 const Login = () => {
 
+    const Home = () => <UseAnimations animation={home} size={40}/>
     return (
         <div className='login-wrapper'>
             <div className='left-block-wrapper'>
@@ -17,7 +21,7 @@ const Login = () => {
                 
                 <div className='wrapper-subtitle-icon'>
                     <h2 className='subtitle-left-block'>Connectons-nous !</h2>
-                    <a href="/" className='icon-home'><FaHome/></a>
+                    <a href="/" className='icon-home'><Home/></a>
                 </div>
 
             </div>

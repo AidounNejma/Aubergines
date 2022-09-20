@@ -25,15 +25,15 @@ const SidebarRight = () => {
                 <SearchBar/>
 
                 <div className='block-scrollable'>
-                <TitleSection title="Les personnes à suivre"/>
-                
-                <Follow image={profiles[0]} name="Julian Speed" />
-                <Follow image={profiles[1]} name="Kristen Mackenzie"/>
-                <Follow image={profiles[2]} name="Sveltlana Flasuova" />
-                
-                <div className='line'></div>
+                    <TitleSection title="Les personnes à suivre"/>
+                        
+                        <Follow image={profiles[0]} name="Julian Speed" />
+                        <Follow image={profiles[1]} name="Kristen Mackenzie"/>
+                        <Follow image={profiles[2]} name="Sveltlana Flasuova" />
+                        
+                    <div className='line'></div>
 
-                <TitleSection title="Vous avez sauvegardé"/>
+                    <TitleSection title="Vous avez sauvegardé"/>
 
                 <div className='thumbnail-saved'>
                     <ThumbnailsSaved image={images[0]} />

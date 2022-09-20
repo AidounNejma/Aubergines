@@ -1,4 +1,5 @@
 import React from 'react';
+import '../..'
 
 const PicturesProfile = ({image, name, available}) => {
     return (
@@ -7,6 +8,8 @@ const PicturesProfile = ({image, name, available}) => {
             </div>
             <p>{name}</p>
         </button>
+        
+    
     );
 };
 

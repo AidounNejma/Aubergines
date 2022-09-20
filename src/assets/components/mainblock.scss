@@ -1,6 +1,6 @@
-@use "../app.scss" as *;
+@use "../app.scss"as *;
 
-.mainBlock{
+.mainBlock {
     position: fixed;
     width: 95%;
     height: 100vh;
@@ -11,7 +11,7 @@
     border-radius: 45px 0 0 0;
     overflow: scroll;
 
-    .wrapper-main-block{
+    .wrapper-main-block {
         width: 68%;
 
         .title-timeline {
@@ -22,13 +22,13 @@
             line-height: 23px;
             color: $dark;
         }
-    
-        .newsfeed-container{
+
+        .newsfeed-container {
             display: grid;
             grid-template-columns: 50% 50%;
             width: 100%;
             height: 100%;
         }
     }
-
 }
+
