@@ -1,0 +1,21 @@
+@use "../../app.scss" as *;
+
+.user-news-feed-layout{
+    display: flex;
+}
+article{
+    padding: 5%;
+    width:50%;
+}
+h3{
+    padding:2%;
+    width:50%;
+}
+.icons{
+    width:40%;
+    display: flex;
+    justify-content: flex-end;
+}
+.icon-display{
+    padding-left:2%;
+}
