@@ -1,4 +1,3 @@
-import React from 'react';
 
 /* Importer toutes les images d'un dossier */
 export function importAll(r) {
