@@ -1,7 +1,7 @@
 import React from 'react'
 import ProfileBanner from './jsx-components/ProfileBanner'
 import UserNewsFeed from './jsx-components/UserNewsFeed';
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart, FaRegCommentDots} from 'react-icons/fa';
 import {importAll} from './functions/ImportImages';
 
 
@@ -16,8 +16,9 @@ const UserProfile = () => {
   return (
     <div>
         <ProfileBanner image={banners[1]}/>
-        <UserNewsFeed icon={<FaHeart className='heart' color="red"/>}/>  
-        <UserNewsFeed icon={<FaHeart className='heart' color="red"/>}/>             
+        <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comment' color="black"/>}/>  
+        <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comments' color="black"/>}/>
+        <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comments' color="black"/>}/>              
     </div>   
   )
 }
