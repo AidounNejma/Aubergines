@@ -7,6 +7,7 @@
     border: none;
     background: none;
     cursor: pointer;
+    width: 50px;
 
     .profile-img{
         width: 50px;
@@ -37,4 +38,37 @@
         margin-top: 10%;
 
     }
+}
+
+@media screen and (max-width: 775px) {
+    .container-profile:nth-of-type(1n+6) {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 688px) {
+    .container-profile:nth-of-type(1n+5) {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 592px) {
+    .container-profile:nth-of-type(1n+4) {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 446px) {
+    .container-profile{
+        width: 40px;
+
+        .profile-img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
 }
