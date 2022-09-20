@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaHome } from 'react-icons/fa';
 import CarouselEdition from '../components/jsx-components/CarouselEdition';
 import '../assets/pages/login.scss';
 import LoginForm from '../components/jsx-components/LoginForm';
