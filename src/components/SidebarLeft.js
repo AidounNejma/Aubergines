@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from '../assets/img/logo.png';
-import { FaHome, FaUserAlt, FaRegCommentDots, FaStar, FaCog } from 'react-icons/fa';
 import '../assets/components/sidebar-left.scss'
 import UseAnimations from 'react-useanimations';
 import home from 'react-useanimations/lib/home'
