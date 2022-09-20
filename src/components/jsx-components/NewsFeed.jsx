@@ -9,7 +9,7 @@ const NewsFeed = ({name, message, image, profile}) => {
             <div className="thumbnail-container">
                 <img className="profil-thumbnail-img" src={profile} alt=""/>
                     <div className='post-informations'>
-                        <p className="pseudo">{name}</p>   
+                        <p className={'pseudo'}>{name}</p>   
                         <p>{message}</p> 
                     </div>                     
             </div>

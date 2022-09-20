@@ -3,6 +3,7 @@ import '../assets/components/mainblock.scss';
 import NewsFeed from './jsx-components/NewsFeed';
 import Stories from './jsx-components/Stories';
 import {importAll} from './functions/ImportImages';
+import UserProfile from './UserProfile';
 
 const MainBlock = () => {
 
@@ -22,7 +23,6 @@ const MainBlock = () => {
                 <Stories/>
 
                 <div className='line'></div>
-
                 <h1 className='title-timeline'>Fil d'actualités</h1>
 
                 <div className='newsfeed-container'>
@@ -30,9 +30,11 @@ const MainBlock = () => {
                     <NewsFeed name="Mily Arthur" message="Soirée à Tokyo trop..." image={images[1]} profile={profiles[1]} />
                     <NewsFeed name="Julian Speed" message="Aurore boréale ça m'inspire..." image={images[2]} profile={profiles[2]} />
                     <NewsFeed name="Sveltlana Flasuova" message="Trop de neige..." image={images[3]} profile={profiles[3]} />
-                </div>
+                </div>          
             </div>
-            
+            <div>
+                <UserProfile/>
+            </div>
         </div>
     );
 };
