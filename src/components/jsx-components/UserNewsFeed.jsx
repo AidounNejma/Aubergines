@@ -23,8 +23,12 @@ const UserNewsFeed = ({icon1, icon2}) => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"
             </article>
             <div className="icons">
-                {icon1}  
+                <div className="icon-display">
+                {icon1}
+                </div>
+                <div className="icon-display">
                 {icon2}
+                </div>                
             </div>                 
         </div> 
     </div>
