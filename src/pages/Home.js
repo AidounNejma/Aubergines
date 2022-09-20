@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
-import SidebarLeft from '../components/SidebarLeft';
-import MainBlock from '../components/MainBlock';
-import SidebarRight from '../components/SidebarRight';
+import React from 'react';
+import BlockTimeline from '../components/BlockTimeline';
+import Layout from '../components/Layout';
 
 const Home = () => {
-    const [show, setShow] = useState(false);
 
     return (
-        <div className='home' style={{display: 'flex'}}>
-            <SidebarLeft/>
-            <MainBlock openSideBar={setShow}/>
-            <SidebarRight opened={show} setIsOpened={setShow}/>
-        </div>
+        <Layout element={<BlockTimeline/>}/>
     );
 };
 

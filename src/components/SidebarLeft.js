@@ -14,7 +14,7 @@ const SidebarLeft = () => {
                 <div className='iconsBottom'>
                     <a href="/"><FaHome /></a>
                     <a href="/"><FaRegCommentDots/></a>
-                    <a href="/"><FaUserAlt/></a>
+                    <a href="/profil"><FaUserAlt/></a>
                     <a href="/"><FaStar/></a>
                     <a href="/"><FaCog/></a>
                 </div>
