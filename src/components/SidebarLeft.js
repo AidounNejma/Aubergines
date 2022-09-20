@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../assets/img/logo.png';
 import '../assets/components/sidebar-left.scss'
-import UseAnimations from 'react-useanimations';
+import UseAnimations from 'react-useanimations'
 import home from 'react-useanimations/lib/home'
 import settings from 'react-useanimations/lib/settings'
 import star from 'react-useanimations/lib/star'
