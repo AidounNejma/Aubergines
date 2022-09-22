@@ -1,7 +1,6 @@
 import React from 'react'
 import NewsFeed from './NewsFeed';
 import '../../assets/components/subcomponents/user-news-feed.scss';
-import '../../assets/components/subcomponents/pictures-profile.scss';
 import { importAll } from '../functions/ImportImages';
 
 const UserNewsFeed = ({ icon1, icon2 }) => {
@@ -9,13 +8,14 @@ const UserNewsFeed = ({ icon1, icon2 }) => {
     const image = importAll(require.context(`../../assets/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);
 
+    const profil = importAll(require.context(`../../assets/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
+    const profils = Object.values(profil);
+
     return (
 
         <div className="user-news-feed-layout" >
-            <div>
-                <NewsFeed image={images[2]} />
-            </div>
-            <div>
+                <NewsFeed image={images[2]} profile={profils[1]}/>
+            <div className='container-text-post'>
                 <h3>
                     "Pourquoi ma vie est meilleure que la vôtre"
                 </h3>
