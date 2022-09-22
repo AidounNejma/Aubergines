@@ -1,10 +1,12 @@
 import React from 'react';
+import Logo from '../../assets/img/logo.png';
 import '../../assets/components/subcomponents/login-register-form.scss';
 
 const RegisterForm = () => {
     return (
         <div className='register-form-container'>
             <div className='container-title-form-register'>
+                <img src={Logo} alt="" className='logoForm' />
                 <h1 className='title-form-register'>Inscrivez-vous maintenant !</h1>
             </div>
             
@@ -18,10 +20,12 @@ const RegisterForm = () => {
                 <div className='wrapper-submit-form'>
                     <button type='submit' className='submit-register-form'>Inscription</button>
                 </div>
-                <div className='wrapper-remember-me'>
-                    <input type="checkbox" id="rememberMe" name='rememberMe' />
-                    <label htmlFor="rememberMe">Se souvenir de moi</label>
+                <div className='wrapper-remember-me-help'>
 
+                    <div className='wrapper-remember-me'>
+                        <input type="checkbox" id="rememberMe" name='rememberMe' />
+                        <label htmlFor="rememberMe">Se souvenir de moi</label>
+                    </div>
                     <a href="/">Besoin d'aide ?</a>
                 </div>
             </form>

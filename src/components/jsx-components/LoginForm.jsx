@@ -13,10 +13,13 @@ const LoginForm = () => {
                 <div className='wrapper-submit-form'>
                     <button type='submit' className='submit-login-form'>Connexion</button>
                 </div>
-                <div className='wrapper-remember-me'>
-                    <input type="checkbox" id="rememberMe" name='rememberMe' />
-                    <label htmlFor="rememberMe">Se souvenir de moi</label>
-
+                <div className='wrapper-remember-me-help'>
+                    
+                    <div className='wrapper-remember-me'>
+                        <input type="checkbox" id="rememberMe" name='rememberMe' />
+                        <label htmlFor="rememberMe">Se souvenir de moi</label>
+                    </div>
+                    
                     <a href="/">Besoin d'aide ?</a>
                 </div>
             </form>

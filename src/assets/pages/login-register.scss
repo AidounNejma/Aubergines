@@ -1,5 +1,13 @@
 @use '../app.scss' as *;
 
+.right-block-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
 .login-wrapper, .register-wrapper{
     display: flex;
 
@@ -63,4 +71,25 @@
 
     
 
+}
+
+@media screen and (max-width: 888px) {
+    .right-block-wrapper{
+        width: 100%;
+    }
+    
+    .register-wrapper{
+        margin-top: 3%;
+    }
+
+    .login-wrapper, .register-wrapper{
+        justify-content: center;
+        .left-block-wrapper{
+            display: none;
+        }
+        .login-form-wrapper, .register-form-wrapper{
+            width: 80%;
+            height: auto;
+        }
+    }
 }

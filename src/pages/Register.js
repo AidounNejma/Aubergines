@@ -19,19 +19,20 @@ const Register = () => {
                 </div>
 
             </div>
+            <div className='right-block-wrapper'>
+                <div className='register-form-wrapper'>
 
-            <div className='register-form-wrapper'>
+                    <RegisterForm/>
 
-                <RegisterForm/>
+                    <div className='line'></div>
 
-                <div className='line'></div>
+                    <p className='already-member'>Déjà membre ?</p>
 
-                <p className='already-member'>Déjà membre ?</p>
+                    <div className='wrapper-link-register'>
+                        <a href="/connexion" className='link-register'>Connexion</a>
+                    </div>
 
-                <div className='wrapper-link-register'>
-                    <a href="/connexion" className='link-register'>Connexion</a>
                 </div>
-
             </div>
         </div>
     );
