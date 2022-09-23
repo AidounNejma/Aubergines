@@ -7,8 +7,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
+#[ApiResource]
 class Post
 {
     #[ORM\Id]
@@ -41,7 +43,7 @@ class Post
     private Collection $reports;
 
     #[ORM\ManyToOne(inversedBy: 'post')]
-    private ?Coment $coment = null;
+    private ?Comment $Comment = null;
 
     public function __construct()
     {
@@ -186,14 +188,14 @@ class Post
         return $this;
     }
 
-    public function getComent(): ?Coment
+    public function getComment(): ?Comment
     {
-        return $this->coment;
+        return $this->Comment;
     }
 
-    public function setComent(?Coment $coment): self
+    public function setComment(?Comment $Comment): self
     {
-        $this->coment = $coment;
+        $this->Comment = $Comment;
 
         return $this;
     }

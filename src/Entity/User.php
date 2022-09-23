@@ -8,8 +8,10 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[ApiResource]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -44,8 +46,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Report::class)]
     private Collection $reports;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Coment::class)]
-    private Collection $coments;
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class)]
+    private Collection $Comments;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Chat::class)]
     private Collection $chats;
@@ -53,7 +55,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->reports = new ArrayCollection();
-        $this->coments = new ArrayCollection();
+        $this->Comments = new ArrayCollection();
         $this->chats = new ArrayCollection();
     }
     
@@ -206,29 +208,29 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Coment>
+     * @return Collection<int, Comment>
      */
-    public function getComents(): Collection
+    public function getComments(): Collection
     {
-        return $this->coments;
+        return $this->Comments;
     }
 
-    public function addComent(Coment $coment): self
+    public function addComment(Comment $Comment): self
     {
-        if (!$this->coments->contains($coment)) {
-            $this->coments->add($coment);
-            $coment->setUser($this);
+        if (!$this->Comments->contains($Comment)) {
+            $this->Comments->add($Comment);
+            $Comment->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeComent(Coment $coment): self
+    public function removeComment(Comment $Comment): self
     {
-        if ($this->coments->removeElement($coment)) {
+        if ($this->Comments->removeElement($Comment)) {
             // set the owning side to null (unless already changed)
-            if ($coment->getUser() === $this) {
-                $coment->setUser(null);
+            if ($Comment->getUser() === $this) {
+                $Comment->setUser(null);
             }
         }
 

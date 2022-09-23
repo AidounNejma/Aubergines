@@ -2,14 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\ComentRepository;
+use App\Repository\CommentRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
-#[ORM\Entity(repositoryClass: ComentRepository::class)]
-class Coment
+#[ORM\Entity(repositoryClass: CommentRepository::class)]
+#[ApiResource]
+class Comment
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -25,13 +27,13 @@ class Coment
     #[ORM\Column]
     private ?bool $published = null;
 
-    #[ORM\ManyToOne(inversedBy: 'coment')]
+    #[ORM\ManyToOne(inversedBy: 'comment')]
     private ?Report $report = null;
 
-    #[ORM\OneToMany(mappedBy: 'coment', targetEntity: Post::class)]
+    #[ORM\OneToMany(mappedBy: 'comment', targetEntity: Post::class)]
     private Collection $post;
 
-    #[ORM\ManyToOne(inversedBy: 'coments')]
+    #[ORM\ManyToOne(inversedBy: 'comments')]
     private ?User $user = null;
 
     public function __construct()
@@ -104,7 +106,7 @@ class Coment
     {
         if (!$this->post->contains($post)) {
             $this->post->add($post);
-            $post->setComent($this);
+            $post->setComment($this);
         }
 
         return $this;
@@ -114,8 +116,8 @@ class Coment
     {
         if ($this->post->removeElement($post)) {
             // set the owning side to null (unless already changed)
-            if ($post->getComent() === $this) {
-                $post->setComent(null);
+            if ($post->getComment() === $this) {
+                $post->setComment(null);
             }
         }
 

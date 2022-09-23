@@ -6,8 +6,10 @@ use App\Repository\ReportRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: ReportRepository::class)]
+#[ApiResource]
 class Report
 {
     #[ORM\Id]
@@ -21,12 +23,12 @@ class Report
     #[ORM\ManyToOne(inversedBy: 'reports')]
     private ?Post $post = null;
 
-    #[ORM\OneToMany(mappedBy: 'report', targetEntity: Coment::class)]
-    private Collection $coment;
+    #[ORM\OneToMany(mappedBy: 'report', targetEntity: Comment::class)]
+    private Collection $Comment;
 
     public function __construct()
     {
-        $this->coment = new ArrayCollection();
+        $this->Comment = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -59,29 +61,29 @@ class Report
     }
 
     /**
-     * @return Collection<int, Coment>
+     * @return Collection<int, Comment>
      */
-    public function getComent(): Collection
+    public function getComment(): Collection
     {
-        return $this->coment;
+        return $this->Comment;
     }
 
-    public function addComent(Coment $coment): self
+    public function addComment(Comment $Comment): self
     {
-        if (!$this->coment->contains($coment)) {
-            $this->coment->add($coment);
-            $coment->setReport($this);
+        if (!$this->Comment->contains($Comment)) {
+            $this->Comment->add($Comment);
+            $Comment->setReport($this);
         }
 
         return $this;
     }
 
-    public function removeComent(Coment $coment): self
+    public function removeComment(Comment $Comment): self
     {
-        if ($this->coment->removeElement($coment)) {
+        if ($this->Comment->removeElement($Comment)) {
             // set the owning side to null (unless already changed)
-            if ($coment->getReport() === $this) {
-                $coment->setReport(null);
+            if ($Comment->getReport() === $this) {
+                $Comment->setReport(null);
             }
         }
 
