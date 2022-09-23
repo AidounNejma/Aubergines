@@ -22,18 +22,20 @@ const Login = () => {
 
             </div>
             
-            <div className='login-form-wrapper'>
+            <div className='right-block-wrapper'>
+                <div className='login-form-wrapper'>
 
-                <LoginForm/>
+                    <LoginForm/>
 
-                <div className='line'></div>
+                    <div className='line'></div>
 
-                <p className='join-aubergines'>Rejoignez Aubergines maintenant !</p>
+                    <p className='join-aubergines'>Rejoignez Aubergines maintenant !</p>
 
-                <div className='wrapper-link-register'>
-                    <a href="/inscription" className='link-register'>Inscription</a>
+                    <div className='wrapper-link-register'>
+                        <a href="/inscription" className='link-register'>Inscription</a>
+                    </div>
+                    
                 </div>
-                
             </div>
         </div>
     );

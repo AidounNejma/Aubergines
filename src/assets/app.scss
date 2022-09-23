@@ -38,9 +38,23 @@ button{
     cursor: pointer;
 }
 
+/* Lignes */
 .line{
     width: 78%;
     height: 1px;
     margin: 18px auto 18px auto;
     background-color: #d7d7d7;
+}
+
+/* icones svg */
+.heart{
+    color: red;
+}
+
+.comments{
+    color: #669AB8;
+}
+
+.saved{
+    color: #51A869;
 }

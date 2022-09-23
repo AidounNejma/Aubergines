@@ -14,7 +14,7 @@ const UserProfile = () => {
 
 
   return (
-    <div>
+    <div className='user-profile'>
         <ProfileBanner image={banners[1]}/>
         <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comment' color="black"/>}/>  
         <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comments' color="black"/>}/>
