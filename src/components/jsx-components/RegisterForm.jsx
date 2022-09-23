@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../../assets/img/logo.png';
 import '../../assets/components/subcomponents/login-register-form.scss';
+import Field from './Forms/Fields';
 
 const RegisterForm = () => {
     return (
@@ -13,10 +14,30 @@ const RegisterForm = () => {
             <div className='line'></div>
 
             <form action="" className='register-form'>
-                <input type="text" className='input-register' placeholder='Entrez votre nom' name='name'/>
-                <input type="text" className='input-register' placeholder="Entrez votre nom d'utilisateur" name='username' />
-                <input type="text" className='input-register' placeholder='Entrez votre email' name='email'/>
-                <input type="text" className='input-register' placeholder='Entrez votre mot de passe' name='password' />
+                <Field
+                name="name"
+                value=""
+                placeholder="Entrez votre nom"
+                className="input-register"
+                />
+                <Field
+                name="username"
+                value=""
+                placeholder="Entrez votre nom d'utilisateur"
+                className="input-register"
+                />
+                <Field
+                name="email"
+                value=""
+                placeholder="Entrez votre email"
+                className="input-register"
+                />
+                <Field
+                name="password"
+                value=""
+                placeholder="Entrez votre mote de passe"
+                className="input-register"
+                />
                 <div className='wrapper-submit-form'>
                     <button type='submit' className='submit-register-form'>Inscription</button>
                 </div>
