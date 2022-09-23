@@ -1,5 +1,5 @@
 import React from 'react';
-import '../jsx-components/CarouselEdition'
+import './CarouselEdition'
 import {Carousel} from '3d-react-carousal';
 import {importAll} from '../functions/ImportImages';
 

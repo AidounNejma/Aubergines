@@ -1,5 +1,5 @@
 import React from 'react';
-import PicturesProfile from '../jsx-components/PicturesProfile';
+import PicturesProfile from './PicturesProfile';
 import {importAll} from '../functions/ImportImages';
 import '../../../styles/components/subcomponents/banner.scss';
 
