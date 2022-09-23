@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"3d-react-carousal@^5.0.0":
+"3d-react-carousal@5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/3d-react-carousal/-/3d-react-carousal-5.0.0.tgz#357f1ec8e39548d3896051cde695cc6820d3c28c"
   integrity sha512-VA9QSswNB/qVdURPJdN9ncKXhdXVoxkcfbihLuwJZPaddAoZyMeOVHEcxE6KMtaX9ChFZw3jvJAIewOk6LC4dQ==

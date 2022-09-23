@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../assets/components/subcomponents/picture-profile.scss';
+import '../../assets/components/subcomponents/pictures-profile.scss';
 
-const PicturesProfile = ({image, name, available}) => {
+const PicturesProfile = ({image, name, available, profilePicture, bannerName}) => {
     return (
         <button className='container-profile'>
-            <div style={{background: `url(${image})`}} className={'profile-img ' + available }>
+            <div style={{background: `url(${image})`}} className={'profile-img ' + available + ' ' + profilePicture }>
             </div>
-            <p>{name}</p>
+            <p className={bannerName}>{name}</p>
         </button>
     );
 };

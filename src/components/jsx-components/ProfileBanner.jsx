@@ -1,7 +1,7 @@
 import React from 'react';
 import PicturesProfile from '../jsx-components/PicturesProfile';
 import {importAll} from '../functions/ImportImages';
-import '../../assets/components/subcomponents/pictures-profile.scss';
+import '../../assets/components/subcomponents/picture-profile.scss';
 
 const ProfileBanner = ({image}) => {
 
@@ -10,8 +10,8 @@ const ProfileBanner = ({image}) => {
 
   return (
     
-    <div style={{background: `url(${image})`}}>
-      <PicturesProfile profilePicture="profile-picture" bannerName="banner-p" image={profils[1]} name="Tony Montana"/>
+    <div className="banner-container" style={{background: `url(${image})`}}>
+      <PicturesProfile profilePicture="profile-picture" bannerName="banner-p" image={profils[1]} name="Mily Arthur"/>
     </div>
     
   );
