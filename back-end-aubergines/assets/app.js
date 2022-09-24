@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from './index';
-import './style/app.scss';
+import '../assets/Js/style/app.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(

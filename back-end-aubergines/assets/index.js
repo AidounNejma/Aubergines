@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import Register from "./pages/Register";
+import Home from '../assets/Js/pages/Home';
+import Login from "../assets/Js/pages/Login";
+import Profile from "../assets/Js/pages/Profile";
+import Register from "../assets/Js/pages/Register";
 
 function Index() {
     return (

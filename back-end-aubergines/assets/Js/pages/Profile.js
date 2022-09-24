@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../Js/components/Layout';
-import UserProfile from '../Js/components/UserProfile'
+import Layout from '../components/Layout';
+import UserProfile from '../components/UserProfile'
 
 const Profile = () => {
 

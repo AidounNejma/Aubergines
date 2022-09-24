@@ -1,6 +1,6 @@
 import React from 'react'
-import ProfileBanner from '../components/jsx-components/ProfileBanner'
-import UserNewsFeed from '../components/jsx-components/UserNewsFeed';
+import ProfileBanner from '../Js/components/jsx-components/ProfileBanner'
+import UserNewsFeed from '../Js/components/jsx-components/UserNewsFeed';
 import { FaHeart, FaRegCommentDots} from 'react-icons/fa';
 import {importAll} from '../components/functions/ImportImages';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaHome } from 'react-icons/fa';
-import '../../style/pages/login-register.scss';
-import Logo from '../../style/img/logo.png';
+import '../style/pages/login-register.scss';
+import Logo from '../style/img/logo.png';
 import RegisterForm from '../Js/components/jsx-components/RegisterForm';
 
 
