@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from '../../../style/img/logo.png';
-import '../../../style/components/subcomponents/login-register-form.scss';
-import Field from '../../components/jsx-components/Forms/Fields';
+import Logo from '../../style/img/logo.png';
+import '../../style/components/subcomponents/login-register-form.scss';
+import Field from '../jsx-components/Forms/Fields';
 
 const RegisterForm = () => {
     return (

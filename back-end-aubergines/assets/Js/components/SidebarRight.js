@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style/components/sidebar-right.scss'
+import '../style/components/sidebar-right.scss'
 import SearchBar from './jsx-components/SearchBar';
 import TitleSection from './jsx-components/TitleSection';
 import Follow from './jsx-components/Follow';
@@ -11,11 +11,11 @@ import {importAll} from './functions/ImportImages';
 const SidebarRight = ({opened, setIsOpened}) => {
 
     /* Import de mes images */
-    const image = importAll(require.context(`../../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
+    const image = importAll(require.context(`../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);
 
     /* Import profile pictures */
-    const profile = importAll(require.context(`../../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
+    const profile = importAll(require.context(`../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
     const profiles = Object.values(profile);
 
     return (

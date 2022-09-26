@@ -1,6 +1,6 @@
 import React from 'react';
 import BlockTimeline from '../components/BlockTimeline';
-import Layout from '../../Js/components/jsx-components/Layout';
+import Layout from '../components/Layout';
 
 const Home = () => {
 

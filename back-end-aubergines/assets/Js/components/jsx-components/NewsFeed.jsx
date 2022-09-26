@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../style/components/subcomponents/newsfeed.scss'
+import '../../style/components/subcomponents/newsfeed.scss'
 
 
 const NewsFeed = ({name, message, image, profile}) => {

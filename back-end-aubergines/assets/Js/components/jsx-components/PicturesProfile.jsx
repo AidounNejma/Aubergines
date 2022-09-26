@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../style/components/subcomponents/pictures-profile.scss';
+import '../../style/components/subcomponents/pictures-profile.scss';
 
 const PicturesProfile = ({image, name, available, profilePicture, bannerName}) => {
     return (

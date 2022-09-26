@@ -1,14 +1,14 @@
 import React from 'react'
 import NewsFeed from '../../components/jsx-components/NewsFeed';
-import '../../../style/components/subcomponents/user-news-feed.scss';
+import '../../style/components/subcomponents/user-news-feed.scss';
 import { importAll } from '../functions/ImportImages';
 
 const UserNewsFeed = ({ icon1, icon2 }) => {
 
-    const image = importAll(require.context(`../../../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
+    const image = importAll(require.context(`../../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);
 
-    const profil = importAll(require.context(`../../../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
+    const profil = importAll(require.context(`../../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
     const profils = Object.values(profil);
 
     return (

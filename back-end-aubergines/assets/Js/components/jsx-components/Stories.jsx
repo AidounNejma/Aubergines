@@ -1,13 +1,13 @@
 import React from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
-import '../../../style/components/subcomponents/stories.scss';
+import '../../style/components/subcomponents/stories.scss';
 import PicturesProfile from './PicturesProfile';
 import {importAll} from '../functions/ImportImages';
 
 const Stories = () => {
 
     /* Import de mes images */
-    const image = importAll(require.context(`../../../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
+    const image = importAll(require.context(`../../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);
 
     return (

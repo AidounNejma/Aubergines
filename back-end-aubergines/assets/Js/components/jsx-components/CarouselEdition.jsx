@@ -6,7 +6,7 @@ import {importAll} from '../functions/ImportImages';
 const CarouselEdition = () => {
     
     /* Import de mes images */
-    const image = importAll(require.context(`../../../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
+    const image = importAll(require.context(`../../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);
 
     let slides = [

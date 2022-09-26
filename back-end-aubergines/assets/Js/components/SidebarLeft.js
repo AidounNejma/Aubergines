@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../../style/img/logo.png';
-import '../../style/components/sidebar-left.scss'
+import Logo from '../style/img/logo.png';
+import '../style/components/sidebar-left.scss'
 import UseAnimations from 'react-useanimations';
 import home from 'react-useanimations/lib/home'
 import settings from 'react-useanimations/lib/settings'

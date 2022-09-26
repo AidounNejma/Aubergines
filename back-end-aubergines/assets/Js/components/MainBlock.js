@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../style/components/mainblock.scss';
-import Stories from '../jsx-components/Stories';
+import '../style/components/mainblock.scss';
+import Stories from '../components/jsx-components/Stories';
 import { FaGripHorizontal } from 'react-icons/fa';
 
 const MainBlock = ({openSideBar, element}) => {

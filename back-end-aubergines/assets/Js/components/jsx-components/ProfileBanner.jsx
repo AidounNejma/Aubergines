@@ -1,10 +1,10 @@
 import React from 'react';
 import PicturesProfile from '../jsx-components/PicturesProfile';
 import {importAll} from '../functions/ImportImages';
-import '../../../style/components/subcomponents/banner.scss';
+import '../../style/components/subcomponents/banner.scss';
 const ProfileBanner = ({image}) => {
 
-  const profil = importAll(require.context(`../../../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
+  const profil = importAll(require.context(`../../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
   const profils = Object.values(profil);
 
   return (

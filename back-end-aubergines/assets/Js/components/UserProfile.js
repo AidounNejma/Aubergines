@@ -1,6 +1,6 @@
 import React from 'react'
-import ProfileBanner from '../Js/components/jsx-components/ProfileBanner'
-import UserNewsFeed from '../Js/components/jsx-components/UserNewsFeed';
+import ProfileBanner from '../components/jsx-components/ProfileBanner'
+import UserNewsFeed from '../components/jsx-components/UserNewsFeed';
 import { FaHeart, FaRegCommentDots} from 'react-icons/fa';
 import {importAll} from '../components/functions/ImportImages';
 
@@ -9,7 +9,7 @@ import {importAll} from '../components/functions/ImportImages';
 const UserProfile = () => {
 
     /* Import de mes images */
-    const banner = importAll(require.context(`../../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
+    const banner = importAll(require.context(`../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const banners = Object.values(banner);
 
 

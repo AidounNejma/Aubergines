@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import MainBlock from '../MainBlock';
-import SidebarLeft from '../SidebarLeft';
-import SidebarRight from '../SidebarRight';
+import MainBlock from './MainBlock';
+import SidebarLeft from './SidebarLeft';
+import SidebarRight from './SidebarRight';
 
 const Layout = ({element}) => {
     

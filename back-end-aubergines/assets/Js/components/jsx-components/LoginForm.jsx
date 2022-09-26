@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../../../style/img/logo.png';
-import '../../../style/components/subcomponents/login-register-form.scss'
+import Logo from '../../style/img/logo.png';
+import '../../style/components/subcomponents/login-register-form.scss'
 import Field from './Forms/Fields';
 
 const LoginForm = () => {

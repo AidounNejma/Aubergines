@@ -4,11 +4,11 @@ import NewsFeed from '../components/jsx-components/NewsFeed';
 
 const BlockTimeline = () => {
     /* Import de mes images */
-    const image = importAll(require.context(`../../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
+    const image = importAll(require.context(`../style/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);
 
     /* Import profile pictures */
-    const profile = importAll(require.context(`../../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
+    const profile = importAll(require.context(`../style/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
     const profiles = Object.values(profile);
 
     return (

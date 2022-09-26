@@ -17,7 +17,8 @@
         "sass-loader": "13.0.0",
         "webpack": "^5.74.0",
         "webpack-cli": "^4.10.0",
-        "webpack-notifier": "^1.15.0"
+        "webpack-notifier": "^1.15.0",
+        "react-router-dom": "6"
     },
     "license": "UNLICENSED",
     "private": true,
@@ -30,6 +31,7 @@
     "dependencies": {
         "prop-types": "^15.8.1",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router-dom": "6"
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import CarouselEdition from '../components/jsx-components/CarouselEdition';
 import '../style/pages/login-register.scss';
-import LoginForm from '../Js/components/jsx-components/LoginForm';
+import LoginForm from '../components/jsx-components/LoginForm';
 
 
 const Login = () => {
