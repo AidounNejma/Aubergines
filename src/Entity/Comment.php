@@ -30,11 +30,12 @@ class Comment
     #[ORM\ManyToOne(inversedBy: 'comment')]
     private ?Report $report = null;
 
-    #[ORM\OneToMany(mappedBy: 'comment', targetEntity: Post::class)]
-    private Collection $post;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
     private ?User $user = null;
+
+    #[ORM\ManyToOne(inversedBy: 'comments')]
+    private ?Post $post = null;
 
     public function __construct()
     {
@@ -94,36 +95,6 @@ class Comment
         return $this;
     }
 
-    /**
-     * @return Collection<int, Post>
-     */
-    public function getPost(): Collection
-    {
-        return $this->post;
-    }
-
-    public function addPost(Post $post): self
-    {
-        if (!$this->post->contains($post)) {
-            $this->post->add($post);
-            $post->setComment($this);
-        }
-
-        return $this;
-    }
-
-    public function removePost(Post $post): self
-    {
-        if ($this->post->removeElement($post)) {
-            // set the owning side to null (unless already changed)
-            if ($post->getComment() === $this) {
-                $post->setComment(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getUser(): ?User
     {
         return $this->user;
@@ -132,6 +103,18 @@ class Comment
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getPost(): ?Post
+    {
+        return $this->post;
+    }
+
+    public function setPost(?Post $post): self
+    {
+        $this->post = $post;
 
         return $this;
     }
