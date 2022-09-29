@@ -12,20 +12,18 @@ const Home = () => {
         try {
         const data = await postsAPI.findAll();
         setPosts(data);
-        console.log(data);
         } catch (error) {
             toast.error("Impossible de charger les posts");
         }
     };
 
-    // Au chargement du composant, on va chercher les customers
+    // Au chargement du composant, on va chercher les posts
     useEffect(() => {
         fetchPost();
     }, []);
 
-    console.log(posts);
     return (
-        <Layout element={<BlockTimeline/>}/>
+        <Layout element={<BlockTimeline props={posts}/>}/>
     );
 };
 

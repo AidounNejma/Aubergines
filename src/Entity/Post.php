@@ -9,40 +9,53 @@ use App\Repository\PostRepository;
 use ApiPlatform\Metadata\ApiResource;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
-#[ApiResource]
+
+#[ApiResource(
+    normalizationContext: ['groups' => ['post:read']]
+)]
 class Post
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("post:read")]
     private ?int $id = null;
 
+    #[Groups("post:read")]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Groups("post:read")]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
+    #[Groups("post:read")]
     #[ORM\Column(length: 255)]
-    private ?string $pictures_post = null;
+    private ?string $picturesPost = null;
 
+    #[Groups("post:read")]
     #[ORM\Column]
     private ?\DateTime $createdAt = null;
 
+    #[Groups("post:read")]
     #[ORM\Column]
     private ?\DateTime $updatedAt = null;
 
+    #[Groups("post:read")]
     #[ORM\Column]
     private ?bool $published = null;
 
     #[ORM\OneToMany(mappedBy: 'post', targetEntity: Report::class)]
     private Collection $reports;
 
+    #[Groups("post:read")]
     #[ORM\ManyToOne(inversedBy: 'posts')]
     private ?User $user = null;
 
+    #[Groups("post:read")]
     #[ORM\OneToMany(mappedBy: 'post', targetEntity: Comment::class)]
     private Collection $comments;
 
@@ -85,12 +98,12 @@ class Post
 
     public function getPicturesPost(): ?string
     {
-        return $this->pictures_post;
+        return $this->picturesPost;
     }
 
-    public function setPicturesPost(string $pictures_post): self
+    public function setPicturesPost(string $picturesPost): self
     {
-        $this->pictures_post = $pictures_post;
+        $this->picturesPost = $picturesPost;
 
         return $this;
     }
