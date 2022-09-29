@@ -48,7 +48,7 @@ security:
     access_control:
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/api/users, roles: IS_AUTHENTICATED_FULLY, methods: [GET, PUT, DELETE, PATCH] }
-        - { path: ^/api/posts, roles: IS_AUTHENTICATED_FULLY, methods: [GET, PUT, DELETE, PATCH] }
+        - { path: ^/api/posts, roles: ROLE_USER, methods: [GET, PUT, DELETE, PATCH] }
         - { path: ^/api/contact, roles: IS_AUTHENTICATED_FULLY, methods: [GET, PUT, DELETE, PATCH] }
         - { path: ^/api/comment, roles: IS_AUTHENTICATED_FULLY, methods: [GET, PUT, DELETE, PATCH] }
 when@test:
