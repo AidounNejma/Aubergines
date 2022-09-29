@@ -5,7 +5,7 @@ const Field = ({
     value,
     onChange,
     placeholder = "",
-    type = "text",
+    type,
     error = "", 
     className
 }) => (
