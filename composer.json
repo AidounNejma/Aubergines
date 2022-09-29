@@ -90,6 +90,22 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "update-branch" : [
+            "composer update",
+            "yarn encore dev",
+            "php bin/console doctrine:schema:update -f",
+            "php bin/console doctrine:fixtures:load",
+            "php bin/console lexik:jwt:generate-keypair --overwrite"
+        ],
+        "install-project" : [
+            "composer install",
+            "yarn install",
+            "yarn encore dev",
+            "php bin/console doctrine:database:create",
+            "php bin/console doctrine:schema:update --force",
+            "php bin/console lexik:jwt:generate-keypair",
+            "php bin/console doctrine:fixtures:load"
         ]
     },
     "conflict": {

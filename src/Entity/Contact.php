@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use App\Repository\ContactRepository;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 #[ApiResource]
@@ -28,13 +29,18 @@ class Contact
     private ?string $message = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $createdAt = null;
+    private ?\DateTime $createdAt = null;
 
     #[ORM\Column]
     private ?bool $isSend = null;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     private ?User $user = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -89,12 +95,12 @@ class Contact
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?DateTime
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(\DateTime $createdAt): self
     {
         $this->createdAt = $createdAt;
 
