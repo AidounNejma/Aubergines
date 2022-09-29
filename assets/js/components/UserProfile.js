@@ -6,16 +6,15 @@ import {importAll} from './functions/ImportImages';
 
 
 
-const UserProfile = () => {
+const UserProfile = ({props}) => {
 
     /* Import de mes images */
     const banner = importAll(require.context(`../../styles/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const banners = Object.values(banner);
-
-
+  
   return (
     <div className='user-profile'>
-        <ProfileBanner image={banners[1]}/>
+        <ProfileBanner image={banners[1]} user={props}/>
         <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comment' color="black"/>}/>  
         <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comments' color="black"/>}/>
         <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comments' color="black"/>}/>              

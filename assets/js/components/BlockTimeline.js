@@ -9,7 +9,7 @@ const BlockTimeline = ({props}) => {
 
             <div className='newsfeed-container'>
                 {props.map(prop => (
-                <NewsFeed name={prop.user.username} message={prop.title} image={prop.picturesPost} profile={prop.user.userPictures} key={prop.id}/>
+                <NewsFeed name={prop.user.username} message={prop.title} image={prop.picturesPost} profile={prop.user.userPictures} key={prop.id} id={prop.user.id}/>
                 ))}
             </div>
         </div>

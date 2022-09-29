@@ -26,6 +26,8 @@ const Index = () => {
             <main className="container mt-5">
                 <ToastContainer position={toast.POSITION.TOP_CENTER} />
                 <Routes>
+                    <Route path="/connexion" element={<Login />} />
+                    <Route path="/inscription" element={<Register />} />
                     <Route 
                         path="/*" 
                         element={
@@ -34,9 +36,14 @@ const Index = () => {
                                 </PrivateRoute>
                             }
                     />
-                    <Route path="/connexion" element={<Login />} />
-                    <Route path="/inscription" element={<Register />} />
-                    <Route path="/profil" element={<Profile />} />
+                    <Route 
+                        path="/profil/:profileId" 
+                        element={
+                                <PrivateRoute>
+                                    <Profile />
+                                </PrivateRoute>
+                            }
+                    />
                 </Routes>
             </main>
         </AuthContext.Provider>

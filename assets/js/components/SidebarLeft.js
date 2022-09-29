@@ -24,7 +24,7 @@ const SidebarLeft = () => {
                 <div className='iconsBottom'>
                     <a href="/"><Home /></a>
                     <a href="/"><Info/></a>
-                    <a href="/profil"><User/></a>
+                    <a href="/profil/33"><User/></a>
                     <a href="/"><Star/></a>
                     <a href="/"><Settings/></a>
                 </div>
