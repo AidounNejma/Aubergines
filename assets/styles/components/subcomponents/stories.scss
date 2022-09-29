@@ -1,0 +1,28 @@
+@use "../../app.scss" as *;
+
+.stories-wrapper{
+    width: 90%;
+
+    .stories-container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 2% 0;
+        
+        .see-more-stories{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 29px;
+            color: #c2bfbf;
+            
+            &:hover{
+                color: $aubergine-light;
+                transition: 0.5s;
+            }
+        }
+        
+    
+    }
+}
+

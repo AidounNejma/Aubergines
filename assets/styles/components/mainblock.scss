@@ -1,0 +1,90 @@
+@use "../app.scss" as *;
+
+.mainBlock{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    z-index: 3;
+    background-color: white;
+    border-radius: 45px 0 0 0;
+    overflow: scroll;
+
+    .wrapper-main-block{
+        width: 100%;
+
+        .title-timeline {
+            margin: 0 0% 3% 9%;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            color: $dark;
+        }
+    
+        .newsfeed-container{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrapper-stories-button{
+            display: flex;
+            align-items: center;
+
+            .button-toggle-sidebar{
+                border: none;
+                outline: none;
+                width: 50px;
+                height: 50px;
+                background: $aubergine-light;
+                color: white;
+                border-radius: 50%;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    background-color: $aubergine-dark;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+    .mainBlock{
+        .wrapper-main-block{
+            .wrapper-stories-button {
+                margin: 2% 4%;
+            }
+        }
+    }  
+
+}
+
+@media screen and (max-width: 446px) {
+    .mainBlock{
+        .wrapper-main-block{
+            .wrapper-stories-button {
+                .button-toggle-sidebar{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }  
+
+}
+
+@media screen and (max-width: 414px) {
+    .mainBlock{
+        width: 100%;
+        border-radius: 0 0 0 0;
+    }  
+
+}
