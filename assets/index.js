@@ -9,6 +9,7 @@ import AuthContext from "./js/contexts/AuthContext";
 import PrivateRoute from "./js/components/PrivateRoute";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+
 AuthAPI.setup();
 
 const Index = () => {
