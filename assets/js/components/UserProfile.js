@@ -6,18 +6,19 @@ import {importAll} from './functions/ImportImages';
 
 
 
-const UserProfile = ({props}) => {
+const UserProfile = ({user, posts}) => {
 
     /* Import de mes images */
     const banner = importAll(require.context(`../../styles/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const banners = Object.values(banner);
-  
+
   return (
     <div className='user-profile'>
-        <ProfileBanner image={banners[1]} user={props}/>
-        <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comment' color="black"/>}/>  
-        <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comments' color="black"/>}/>
-        <UserNewsFeed icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comments' color="black"/>}/>              
+        <ProfileBanner image={banners[1]} user={user}/>
+          {posts?.map(post => (
+              <UserNewsFeed key={post.id} post={post} user={user} icon1={<FaHeart className='heart' color="red"/>} icon2={<FaRegCommentDots className='comment' color="black"/>} />
+        ))}
+        
     </div>   
   )
 }

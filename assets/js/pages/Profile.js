@@ -26,11 +26,10 @@ const Profile = () => {
     useEffect(() => {
         fetchUser();
 
-    }, []);
-
+    }, [user]);
 
     return (
-        <Layout element={<UserProfile props={user}/>}/>
+        <Layout element={<UserProfile user={user} posts={user.posts}/>}/>
     );
 };
 

@@ -21,30 +21,30 @@ class Post
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups("post:read")]
+    #[Groups(['post:read', 'user:read'])]
     private ?int $id = null;
 
-    #[Groups("post:read")]
+    #[Groups(['post:read', 'user:read'])]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[Groups("post:read")]
+    #[Groups(['post:read', 'user:read'])]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[Groups("post:read")]
+    #[Groups(['post:read', 'user:read'])]
     #[ORM\Column(length: 255)]
     private ?string $picturesPost = null;
 
-    #[Groups("post:read")]
+    #[Groups(['post:read', 'user:read'])]
     #[ORM\Column]
     private ?\DateTime $createdAt = null;
 
-    #[Groups("post:read")]
+    #[Groups(['post:read', 'user:read'])]
     #[ORM\Column]
     private ?\DateTime $updatedAt = null;
 
-    #[Groups("post:read")]
+    #[Groups(['post:read', 'user:read'])]
     #[ORM\Column]
     private ?bool $published = null;
 

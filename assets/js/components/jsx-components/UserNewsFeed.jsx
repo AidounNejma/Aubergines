@@ -3,8 +3,7 @@ import NewsFeed from './NewsFeed';
 import '../../../styles/components/subcomponents/user-news-feed.scss';
 import { importAll } from '../functions/ImportImages';
 
-const UserNewsFeed = ({ icon1, icon2 }) => {
-
+const UserNewsFeed = ({ icon1, icon2, post, user }) => {
     const image = importAll(require.context(`../../../styles/img/posts`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);
 
@@ -14,13 +13,13 @@ const UserNewsFeed = ({ icon1, icon2 }) => {
     return (
 
         <div className="user-news-feed-layout" >
-                <NewsFeed image={images[2]} profile={profils[1]}/>
+                <NewsFeed image={post.picturesPost} profile={user.userPictures} id={user.id}/>
             <div className='container-text-post'>
                 <h3>
-                    "Pourquoi ma vie est meilleure que la vôtre"
+                    {post.title}
                 </h3>
                 <article>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"
+                    {post.content}
                 </article>
                 <div className="icons">
                     <div className="icon-display">

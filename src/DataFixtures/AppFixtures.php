@@ -38,7 +38,8 @@ class AppFixtures extends Fixture
                 ->setUsername($faker->lastName)
                 ->setEmail($faker->email)
                 ->setPassword($hash)
-                ->setUserPictures($faker->imageUrl($width = 640, $height = 480));
+                ->setUserPictures($faker->imageUrl($width = 640, $height = 480))
+                ->setRoles('ROLE_USER');
 
             $manager->persist($user);
 
