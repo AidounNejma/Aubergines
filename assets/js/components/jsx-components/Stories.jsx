@@ -3,12 +3,17 @@ import { FaPlusCircle } from 'react-icons/fa';
 import '../../../styles/components/subcomponents/stories.scss';
 import PicturesProfile from './PicturesProfile';
 import {importAll} from '../functions/ImportImages';
+import { FaGripHorizontal } from 'react-icons/fa';
 
-const Stories = () => {
+const Stories = ({openSideBar}) => {
 
     /* Import de mes images */
     const image = importAll(require.context(`../../../styles/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);
+
+    const toggleSidebar = () => {
+        openSideBar(true);
+    }
 
     return (
         <div className='stories-wrapper'>
@@ -24,6 +29,8 @@ const Stories = () => {
                 <button type='button' className='see-more-stories'>
                     <FaPlusCircle/>
                 </button>
+                
+                <button onClick={toggleSidebar} className='button-toggle-sidebar'><FaGripHorizontal/></button>
             </div>
         </div>
     );

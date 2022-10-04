@@ -30,7 +30,7 @@
             flex-direction: column;
             margin: 0;
     
-            a {
+            a, button {
                 color: $dark;
                 margin: 30% 0;
     
@@ -43,7 +43,69 @@
                     font-size: 25px;
                 }
             }
+
+            button{
+                border: none;
+                background: none;
+            }
             
+        }
+
+        .settings-menu{
+            position: absolute;
+            bottom: 0;
+            width: 200px;
+            background: #7f3077;
+            left: 98px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transform: scaleY(0.01) scaleX(0);
+            animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+            a, button{
+                color: $white;
+                font-weight: 500;
+                padding: 7% 6%;
+                font-size: 1rem;
+
+                &:hover{
+                    background-color: $aubergine-dark;
+                    transition: 0.5s;
+                }
+            }
+
+            a{
+                border-radius: 11px 11px 0 0;
+            }
+
+            button{
+                border-radius: 0 0 11px 11px;
+                background: none;
+                border: none;
+            }
+
+            &.in {
+                opacity: 1;
+                transform:scaleY(.01) scaleX(0);
+                animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            }
+            &.out {
+                transform:scale(1);
+                animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            }
+
+            .arrow-left{
+                width: 0;
+                height: 0;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-right: 15px solid #7f3077;
+                position: absolute;
+                left: -7%;
+                top: 48%;
+            }
         }
     }
 }
@@ -103,5 +165,30 @@
                 }
             }
         }
+    }
+}
+
+/* Animations */
+@keyframes unfoldIn {
+    0% {
+        transform:scaleY(.005) scaleX(0);
+    }
+    50% {
+        transform:scaleY(.005) scaleX(1);
+    }
+    100% {
+        transform:scaleY(1) scaleX(1);
+    }
+}
+
+@keyframes unfoldOut {
+    0% {
+        transform:scaleY(1) scaleX(1);
+    }
+    50% {
+        transform:scaleY(.005) scaleX(1);
+    }
+    100% {
+        transform:scaleY(.005) scaleX(0);
     }
 }
