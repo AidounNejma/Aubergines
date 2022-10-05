@@ -10,7 +10,7 @@ const Layout = ({element}) => {
     return (
         <div style={{display: 'flex'}}>
             <SidebarLeft/>
-            <MainBlock openSideBar={setShow} element={element} />
+                <MainBlock openSideBar={setShow} element={element} />
             <SidebarRight opened={show} setIsOpened={setShow}/>
         </div>
     );

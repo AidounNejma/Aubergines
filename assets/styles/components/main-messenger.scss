@@ -1,0 +1,84 @@
+@use "../app.scss" as *;
+
+.main-messenger{
+    width: 60%;
+    height: 100vh;
+
+    .header-conversation{
+        display: flex;
+        width: 100%;
+        padding: 4%;
+
+        .container-picture{
+            width: 10%;
+
+            img{
+                width: 55px;
+                height: 55px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+
+        .container-name{
+            width: 90%;
+
+            .sub-name-conversation{
+                font-size: 0.8rem;
+                color: rgb(155, 153, 153);
+                padding-top: 1%;
+            }
+        }
+    }
+
+    .conversation{
+        overflow: scroll;
+        height: 70vh;
+        padding: 4%;
+
+        background: /* Shadow covers */
+        linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */
+        radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+        background: /* Shadow covers */
+        linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */
+        radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+        /* Opera doesn't support this in the shorthand */
+        background-attachment: local, local, scroll, scroll;
+    }
+
+    .send-message{
+        .form-send-message{
+            padding: 3% 6%;
+            position: relative;
+            
+            .input-message{
+                width: 100%;
+                padding: 1% 3%;
+                border-radius: 14px;
+                border: 2px solid #f1efef;
+                background-color: #f1efef;
+
+                &:focus{
+                    outline: 2px solid $aubergine-light;
+                }
+            }
+
+            .submit-form{
+                position: absolute;
+                right: 8%;
+                bottom: 37%;
+                border: none;
+                background: none;
+                font-size: 1rem;
+                color: $aubergine-light;
+
+                &:hover{
+                    color: $aubergine-dark;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}

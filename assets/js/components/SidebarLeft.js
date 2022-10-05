@@ -24,7 +24,6 @@ const SidebarLeft = () => {
     
     const handleLogout = () => {
         AuthAPI.logout();
-        //setIsAuthenticated(false);
         navigate('/connexion', { replace: true });
     }
 
@@ -39,13 +38,13 @@ const SidebarLeft = () => {
                     <a href="/"><Home /></a>
                     <a href="/"><Info/></a>
                     <a href="/profil/33"><User/></a>
-                    <a href="/"><Mail/></a>
+                    <a href="/messagerie"><Mail/></a>
                     <button onClick={() => openMenu(open => !open)}><Settings /></button>
                 </div>
                 
                 <div className={`settings-menu ${menu ? '' : 'out'}`}>
                     <div className='arrow-left'></div>
-                    <a href="/">Paramètres du compte</a>
+                    <a href="/">Paramètres</a>
                     <button onClick={handleLogout}>Déconnexion</button>
                 </div>
 

@@ -1,0 +1,65 @@
+@use "../../app.scss" as *;
+
+.container-conversation{
+    display: flex;
+    border: none;
+    background: none;
+    width: 100%;
+    padding: 4%;
+
+    .container-img{
+        width: 15%;
+        
+        img{
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+    
+    .wrapper-name{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 4%;
+        width: 70%;
+
+        h3{
+            font-size: 1rem;
+        }
+
+        .message{
+            color: #a7a5a5;
+            padding-top: 2%;
+        }
+
+        .unseen-message{
+            color: #000;
+            font-weight: 600;
+        }
+    }
+
+    .date-number-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 15%;
+
+        .date{
+            color: grey;
+            font-size: 0.7rem;
+            padding-bottom: 6%;
+        }
+    }
+
+    &:hover{
+        background: linear-gradient(90deg, rgba(76,22,71,1) 0%, rgba(76,22,71,0.486453956582633) 50%, rgba(76,22,71,0) 100%);
+        transition: 0.5s;
+    }
+
+    &:hover, &:hover .message{
+        color: $white;
+        transition: 0.5s;
+    }
+}

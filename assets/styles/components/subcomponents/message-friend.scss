@@ -1,0 +1,37 @@
+@use "../../app.scss" as *;
+
+.message-friend{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 7% 0;
+
+    .image-container{
+        width: 10%;
+
+        img{
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    .text-container{
+        width: 50%;
+        .message{
+            background-color: #591c52;
+            color: white;
+            padding: 4%;
+            border-radius: 10px 10px 10px 0;
+            width: 100%;
+        }
+
+        .date{
+            font-size: 0.7em;
+            color: #716f6f;
+            font-weight: 500;
+        }
+    }
+}

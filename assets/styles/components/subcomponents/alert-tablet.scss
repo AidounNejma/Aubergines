@@ -1,0 +1,15 @@
+@use "../../app.scss" as *;
+
+.alert-tablet{
+    background-color: $aubergine-light;
+    padding: 2%;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-weight: 500;
+}

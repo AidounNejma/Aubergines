@@ -9,6 +9,7 @@ import AuthContext from "./js/contexts/AuthContext";
 import PrivateRoute from "./js/components/PrivateRoute";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Messenger from './js/pages/Messenger';
 
 AuthAPI.setup();
 
@@ -41,6 +42,14 @@ const Index = () => {
                         element={
                                 <PrivateRoute>
                                     <Profile />
+                                </PrivateRoute>
+                            }
+                    />
+                    <Route 
+                        path="/messagerie" 
+                        element={
+                                <PrivateRoute>
+                                    <Messenger/>
                                 </PrivateRoute>
                             }
                     />

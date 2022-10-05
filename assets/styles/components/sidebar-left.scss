@@ -61,14 +61,15 @@
             display: flex;
             flex-direction: column;
             opacity: 1;
-            transform: scaleY(0.01) scaleX(0);
-            animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-
+            transform:scaleY(.01) scaleX(0);
+            animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            
             a, button{
                 color: $white;
                 font-weight: 500;
                 padding: 7% 6%;
                 font-size: 1rem;
+                text-align: center;
 
                 &:hover{
                     background-color: $aubergine-dark;
@@ -162,6 +163,24 @@
 
                 a{
                     color: $aubergine-dark;
+                }
+            }
+
+            .settings-menu{
+                bottom: 78px;
+                left: 48%;
+                width: 50%;
+
+                .arrow-left{
+                    border-left: 15px solid transparent;
+                    border-right: 15px solid transparent;
+                    border-top: 15px solid #7f3077;
+                    position: absolute;
+                    bottom: -15%;
+                    right: 15%;
+                    left: unset;
+                    top: unset;
+                    border-bottom: unset;
                 }
             }
         }
