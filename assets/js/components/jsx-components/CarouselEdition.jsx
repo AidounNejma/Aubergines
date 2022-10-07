@@ -2,6 +2,7 @@ import React from 'react';
 import './CarouselEdition'
 import {Carousel} from '3d-react-carousal';
 import {importAll} from '../functions/ImportImages';
+import '../../../styles/components/subcomponents/carousel.scss';
 
 const CarouselEdition = () => {
     
