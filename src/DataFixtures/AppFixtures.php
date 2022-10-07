@@ -27,6 +27,35 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
 
+        /* Administrateur test */
+        $adminTest = new User();
+
+        $password = $this->encoder->hashPassword($adminTest, "password");
+
+        $adminTest->setName("Kristen Mackenzie")
+            ->setUsername("Kristen")
+            ->setEmail("admin@test.com")
+            ->setPassword($password)
+            ->setUserPictures('/assets/styles/img/profile-pictures/image1.png')
+            ->setRoles(['ROLE_ADMIN']);
+
+        $manager->persist($adminTest);
+
+        /* Utilisateur test */
+        $userTest = new User();
+
+        $password = $this->encoder->hashPassword($userTest, "password");
+
+        $userTest->setName("Mily Arthur")
+            ->setUsername("Mily")
+            ->setEmail("user@test.com")
+            ->setPassword($password)
+            ->setUserPictures('/assets/styles/img/profile-pictures/image2.png')
+            ->setRoles(['ROLE_USER']);
+
+        $manager->persist($userTest);
+
+        /* 10 utilisateurs */
         for ($u = 0; $u < 10; $u++) {
             $user = new User();
 
@@ -39,10 +68,11 @@ class AppFixtures extends Fixture
                 ->setEmail($faker->email)
                 ->setPassword($hash)
                 ->setUserPictures($faker->imageUrl($width = 640, $height = 480))
-                ->setRoles('ROLE_USER');
+                ->setRoles(['ROLE_USER']);
 
             $manager->persist($user);
 
+            /* 20 posts */
             for ($p = 0; $p < mt_rand(5, 20); $p++) {
                 $post = new Post();
                 $post->setTitle($faker->realText($maxNbChars = 50, $indexSize = 2))

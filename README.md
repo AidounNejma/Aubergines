@@ -54,5 +54,5 @@ Connexion en tant qu'administrateur :
 
 Connexion en tant qu'utilisateur :
 
-> Email : client1@test.com \
+> Email : user@test.com \
 > Mot de passe : password
