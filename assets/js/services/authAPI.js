@@ -1,13 +1,28 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import { useState } from "react";
 import { LOGIN_API } from "../config";
-
+import usersAPI from '../services/usersAPI'
 /**
  * Déconnexion (suppression du token du localStorage et sur Axios)
  */
 function logout() {
     window.localStorage.removeItem("authToken");
     delete axios.defaults.headers["Authorization"];
+}
+
+/* Stocker l'utilisateur dans le CurrentUserContext */
+async function findCurrentUser(){
+      /* Récupération du token */
+      const token = window.localStorage.getItem("authToken");
+
+      /* Décodage du token */
+      var decode = jwtDecode(token);
+      
+      /* Recherche de l'utilisateur par l'id */
+      const user = await usersAPI.find(decode.id).then(response => {return response});
+
+      return user
 }
 
 /**
@@ -71,5 +86,6 @@ export default {
     authenticate,
     logout,
     setup,
-    isAuthenticated
+    isAuthenticated,
+    findCurrentUser
 };

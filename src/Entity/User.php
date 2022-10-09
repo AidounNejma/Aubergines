@@ -13,6 +13,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ApiResource(
@@ -303,4 +304,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /* public function getUser(): ?User
+    {
+        $token = $this->tokenStorage->getToken();
+
+        if (!$token) {
+            return null;
+        }
+
+        $user = $token->getUser();
+
+        if (!$user instanceof User) {
+            return null;
+        }
+
+        return $user;
+    } */
 }

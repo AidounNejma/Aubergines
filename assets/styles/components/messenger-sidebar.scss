@@ -5,65 +5,69 @@
     background-color: rgb(243, 243, 243);
     height: 100vh;
 
-    .container-title{
-        display: flex;
-        align-items: center;
-        padding: 5% 4%;
-        
-        .button-menu-tab{
-            background: none;
-            color: $aubergine-light;
-            font-size: 1.1rem;
+    .wrapper-sidebar{
+        height: 45vh;
+
+        .container-title{
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-right: 2%;
-            padding: 2%;
-            border-radius: 16px;
-            border: none;
-
-            &:hover{
-                color: $aubergine-dark;
-                transition: 0.5s;
+            padding: 5% 4%;
+            
+            .button-menu-tab{
+                background: none;
+                color: $aubergine-light;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 2%;
+                padding: 2%;
+                border-radius: 16px;
+                border: none;
+    
+                &:hover{
+                    color: $aubergine-dark;
+                    transition: 0.5s;
+                }
+            }
+    
+            h1{
+                font-weight: 800;
+                font-size: 1.6rem;
+                padding-right: 3%;
             }
         }
-
-        h1{
+    
+        .container-searchbar{
+            .input-search{
+                width: 90%;
+                margin: 4% auto;
+                position: relative;
+                background-color: #af97ad;
+                color: $white;
+                padding: 1%;
+    
+                input::placeholder {
+                    color: $white !important;
+                }
+            }
+        }
+    
+        .container-icons{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 2% 0;
+        }
+    
+        .title-discussions{
+            font-size: 0.9rem;
+            color: #919191;
             font-weight: 800;
-            font-size: 1.6rem;
-            padding-right: 3%;
+            padding: 5% 6%;
         }
     }
-
-    .container-searchbar{
-        .input-search{
-            width: 90%;
-            margin: 4% auto;
-            position: relative;
-            background-color: #af97ad;
-            color: $white;
-            padding: 1%;
-
-            input::placeholder {
-                color: $white !important;
-            }
-        }
-    }
-
-    .container-icons{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        margin: 2% 0;
-    }
-
-    .title-discussions{
-        font-size: 0.9rem;
-        color: #919191;
-        font-weight: 800;
-        padding: 5% 6%;
-    }
-
+    
     .wrapper-conversations{
         display: flex;
         flex-direction: column;

@@ -10,9 +10,9 @@ import { toast } from "react-toastify";
 import Field from '../components/jsx-components/Forms/Fields';
 import Logo from '../../styles/img/logo.png';
 
-
 const Login = () => {
     const {setIsAuthenticated} = useContext(AuthContext);
+
 
     /* Redirection de l'utilisateur */
     const navigate = useNavigate();
@@ -40,6 +40,7 @@ const Login = () => {
 
         try {
             await AuthApi.authenticate(credentials);
+
             setError("");
             toast.success('🥳 Connexion réussie !', {
                 position: "top-right",
@@ -51,6 +52,7 @@ const Login = () => {
                 progress: undefined,
             });
             setIsAuthenticated(true);
+
             navigate(to, { replace: true });
 
         } catch (error) {

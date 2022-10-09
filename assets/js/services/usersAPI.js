@@ -26,8 +26,7 @@ async function find(id) {
         return user;
     });
 }
-
 export default {
     register,
-    find
+    find,
 };
