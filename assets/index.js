@@ -58,6 +58,14 @@ const Index = () => {
                                 }
                         />
                         <Route 
+                            path="/profil/" 
+                            element={
+                                    <PrivateRoute>
+                                        <Profile />
+                                    </PrivateRoute>
+                                }
+                        />
+                        <Route 
                             path="/messagerie" 
                             element={
                                     <PrivateRoute>

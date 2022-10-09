@@ -22,7 +22,7 @@ async function findCurrentUser(){
       /* Recherche de l'utilisateur par l'id */
       const user = await usersAPI.find(decode.id).then(response => {return response});
 
-      return user
+      return user;
 }
 
 /**

@@ -4,6 +4,7 @@ import UserProfile from '../components/UserProfile'
 import userAPI from '../services/usersAPI';
 import { toast } from "react-toastify";
 import { useParams } from 'react-router';
+import authAPI from '../services/authAPI';
 
 const Profile = () => {
     //récupération de l'id de l'url
@@ -14,18 +15,24 @@ const Profile = () => {
     
     // Permet d'aller récupérer l'utilisateur
     const fetchUser = async () => {
-        try {
-        const data = await userAPI.find(params.profileId);
-        setUser(data);
-        } catch (error) {
-            toast.error("Impossible de charger le profil");
+        /* Si on récupère un id alors on recherche l'utilisateur en question */
+        if(params.profileId){
+            try {
+            const data = await userAPI.find(params.profileId);
+            setUser(data);
+            } catch (error) {
+                toast.error("Impossible de charger le profil");
+            }
+        }
+        else{
+            /* Sinon on récupère l'utilisateur connecté */
+            authAPI.findCurrentUser().then(response => setUser(response));
         }
     };
 
     // Au chargement du composant, on va chercher l'utilisateur
     useEffect(() => {
         fetchUser();
-
     }, [user]);
 
     return (
