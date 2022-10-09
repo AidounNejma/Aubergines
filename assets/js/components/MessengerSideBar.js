@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/components/messenger-sidebar.scss';
-import { FaAddressBook, FaArchive, FaCommentDots, FaPhoneAlt, FaTh } from 'react-icons/fa';
+import { FaAddressBook, FaArchive, FaCommentDots, FaPhoneAlt, FaPlus, FaTh } from 'react-icons/fa';
 import InputSearch from './jsx-components/InputSearch';
 import ButtonMessages from './jsx-components/ButtonMessages';
 import AlertTablet from './jsx-components/AlertTablet';
@@ -45,7 +45,15 @@ const MessengerSideBar = () => {
                 <ButtonMessages picture={profilePictures[3]} date="10 oct." number="" name="Sveltlana Flasuova" message="Je vois, ça à l'air..."/>
                 <ButtonMessages picture={profilePictures[4]} date="18 dec." number="9" name="Kylie Mansour" message="Mais réponds moi bon..."/>
                 <ButtonMessages picture={profilePictures[5]} date="29 fev." number="" name="Pam Anderson" message="Yeah of course, why not..."/>
+                
+                <div className='wrapper-button-send-message'>
+                    <button className='create-message'>
+                        <FaPlus/>
+                    </button>
+                </div>
             </div>
+
+            
 
         </section>
     );

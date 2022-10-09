@@ -73,5 +73,26 @@
         flex-direction: column;
         overflow: scroll;
         height: 55vh;
+
+        .wrapper-button-send-message{
+            position: absolute;
+            bottom: 5%;
+            left: 33%;
+
+            .create-message{
+                border: none;
+                background-color: $aubergine-light;
+                color: white;
+                padding: 15px;
+                border-radius: 50%;
+                font-size: 1.1rem;
+
+                &:hover{
+                    background-color: #919191;
+                    color: $aubergine-light;
+                    transition: 0.5s;
+                }
+            }
+        }
     }
 }
