@@ -6,7 +6,6 @@ import home from 'react-useanimations/lib/home';
 import settings from 'react-useanimations/lib/settings';
 import mail from 'react-useanimations/lib/mail';
 import activity from 'react-useanimations/lib/activity';
-import alertCircle from 'react-useanimations/lib/alertCircle';
 import AuthAPI from '../services/authAPI';
 import { useNavigate } from 'react-router';
 
@@ -15,7 +14,6 @@ const SidebarLeft = () => {
     const Settings = () => <UseAnimations animation={settings} size={40}/>
     const Mail = () => <UseAnimations animation={mail} size={40}/>
     const User = () => <UseAnimations animation={activity} size={40}/>
-    const Info = () => <UseAnimations animation={alertCircle} size={40}/>
 
     const [menu, openMenu] = useState(false);
 
@@ -36,7 +34,6 @@ const SidebarLeft = () => {
 
                 <div className='iconsBottom'>
                     <a href="/"><Home /></a>
-                    <a href="/"><Info/></a>
                     <a href="/profil"><User/></a>
                     <a href="/messagerie"><Mail/></a>
                     <button onClick={() => openMenu(open => !open)}><Settings /></button>

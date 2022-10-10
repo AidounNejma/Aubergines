@@ -1,0 +1,21 @@
+@use "../app.scss" as *;
+
+.user-profile{
+
+    .container-button-create{
+        position: fixed;
+        right: 8%;
+        bottom: 5%;
+    }
+
+}
+
+@media screen and (max-width: 414px){
+    .user-profile{
+
+        .container-button-create{
+            bottom: 12%;
+        }
+    
+    }
+}

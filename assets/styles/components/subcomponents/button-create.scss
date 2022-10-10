@@ -1,0 +1,16 @@
+@use "../../app.scss" as *;
+
+.button-create{
+    border: none;
+    background-color: #760e6d;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+
+    &:hover{
+        background-color: #919191;
+        color: #760e6d;
+        transition: 0.5s;
+    }
+}

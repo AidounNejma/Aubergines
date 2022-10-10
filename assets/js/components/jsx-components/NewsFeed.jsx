@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import '../../../styles/components/subcomponents/newsfeed.scss'
 
 
-const NewsFeed = ({name, message, image, profile, id}) => {
+const NewsFeed = ({name, message, image, profile, id, post}) => {
     return (
-            <div className='container-post'>
+            <Link to={`/post/`+ post.id} className='container-post'>
                 <img className="thumbnail-img" src={image} alt="" />
                 <div className="thumbnail-container" >
                     
@@ -13,12 +13,12 @@ const NewsFeed = ({name, message, image, profile, id}) => {
                         <img src={profile} alt=""/>
                     </Link>
 
-                    <a href="/" className='post-informations' style={{color : 'black'}}>
+                    <div className='post-informations' style={{color : 'black'}}>
                         <p className='pseudo'>{name}</p>   
                         <p>{message}</p> 
-                    </a>                     
+                    </div>                     
                 </div>
-            </div>                                                                             
+            </Link>                                                                             
         );
     };
 

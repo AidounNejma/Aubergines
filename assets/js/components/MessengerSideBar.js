@@ -6,6 +6,7 @@ import ButtonMessages from './jsx-components/ButtonMessages';
 import AlertTablet from './jsx-components/AlertTablet';
 import ButtonIcons from './jsx-components/ButtonIcons';
 import {importAll} from './functions/ImportImages';
+import ButtonCreate from './jsx-components/ButtonCreate';
 
 const MessengerSideBar = () => {
     /* Import de mes images */
@@ -47,9 +48,7 @@ const MessengerSideBar = () => {
                 <ButtonMessages picture={profilePictures[5]} date="29 fev." number="" name="Pam Anderson" message="Yeah of course, why not..."/>
                 
                 <div className='wrapper-button-send-message'>
-                    <button className='create-message'>
-                        <FaPlus/>
-                    </button>
+                    <ButtonCreate/>
                 </div>
             </div>
 
