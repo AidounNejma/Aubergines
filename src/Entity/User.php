@@ -16,9 +16,11 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+
 #[ApiResource(
     normalizationContext: ['groups' => ['user:read']]
 )]
+
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -58,6 +60,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Report::class)]
     private Collection $reports;
 
+    #[Groups(['post:read', 'user:read'])]
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class)]
     private Collection $Comments;
 

@@ -1,0 +1,42 @@
+@use "../../app.scss" as *;
+
+.comment{
+    display: flex;
+    align-items: center;
+
+    .container-image{
+        width: 15%;
+
+        img{
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    .content-comment{
+        width: 85%;
+        background-color: $aubergine-light;
+        padding: 2%;
+        color: white;
+        border-radius: 25px 25px 25px 0;
+
+        .content-header, .content-bottom{
+            display: flex;
+        }
+
+        .content-header{
+            padding-bottom: 2%;
+            
+            p{
+                padding-right: 1%;
+            }
+
+            .name{
+                font-weight: 600;
+            }
+        }
+    }
+
+}

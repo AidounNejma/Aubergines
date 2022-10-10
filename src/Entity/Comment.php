@@ -11,31 +11,41 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
-#[ApiResource]
+
+#[ApiResource(
+    normalizationContext: ['groups' => ['comment:read']]
+)]
+
 class Comment
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['post:read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['post:read'])]
     private ?string $content = null;
 
     #[ORM\Column]
+    #[Groups(['post:read'])]
     private ?\DateTime $createdAt = null;
 
     #[ORM\Column]
+    #[Groups(['post:read'])]
     private ?bool $published = null;
 
     #[ORM\ManyToOne(inversedBy: 'comment')]
+    #[Groups(['post:read'])]
     private ?Report $report = null;
 
-
     #[ORM\ManyToOne(inversedBy: 'comments')]
+    #[Groups(['post:read', 'comment:read'])]
     private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
+    #[Groups(['post:read'])]
     private ?Post $post = null;
 
     public function __construct()
