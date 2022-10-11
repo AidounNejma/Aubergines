@@ -56,7 +56,7 @@ class Post
     #[ORM\ManyToOne(inversedBy: 'posts')]
     private ?User $user = null;
 
-    #[Groups("post:read", "user:read")]
+    #[ApiProperty(fetchEager: true)]
     #[ORM\OneToMany(mappedBy: 'post', targetEntity: Comment::class)]
     private Collection $comments;
 

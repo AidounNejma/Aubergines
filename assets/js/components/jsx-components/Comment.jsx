@@ -3,6 +3,8 @@ import { importAll } from '../functions/ImportImages';
 import '../../../styles/components/subcomponents/comment.scss';
 
 const Comment = ({post}) => {
+
+    console.log(post);
     /* Import de mes images */
     const image = importAll(require.context(`../../../styles/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
     const images = Object.values(image);

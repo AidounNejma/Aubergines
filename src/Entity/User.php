@@ -26,10 +26,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['post:read', 'user:read'])]
+    #[Groups(['post:read', 'user:read', 'comment:read'])]
     private ?int $id = null;
 
-    #[Groups(['post:read', 'user:read'])]
+    #[Groups(['post:read', 'user:read', 'comment:read'])]
     #[ORM\Column(length: 180, unique: true)]
     #[Assert\Email(message:"L'adresse email doit avoir un format valide !")]
     #[Assert\NotBlank(message:"L'email doit être renseigné !")]
@@ -57,12 +57,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $userPictures = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['post:read', 'user:read'])]
+    private ?string $userBanner = null;
+
+
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Report::class)]
     private Collection $reports;
 
     #[Groups(['post:read', 'user:read'])]
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class)]
-    private Collection $Comments;
+    private Collection $comments;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Chat::class)]
     private Collection $chats;
@@ -75,7 +80,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->reports = new ArrayCollection();
-        $this->Comments = new ArrayCollection();
+        $this->comments = new ArrayCollection();
         $this->chats = new ArrayCollection();
         $this->posts = new ArrayCollection();
         $this->createdAt = new DateTime();
@@ -219,29 +224,29 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Comment>
+     * @return Collection<int, comment>
      */
     public function getComments(): Collection
     {
-        return $this->Comments;
+        return $this->comments;
     }
 
-    public function addComment(Comment $Comment): self
+    public function addComment(Comment $comment): self
     {
-        if (!$this->Comments->contains($Comment)) {
-            $this->Comments->add($Comment);
-            $Comment->setUser($this);
+        if (!$this->comments->contains($comment)) {
+            $this->comments->add($comment);
+            $comment->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeComment(Comment $Comment): self
+    public function removeComment(Comment $comment): self
     {
-        if ($this->Comments->removeElement($Comment)) {
+        if ($this->comments->removeElement($comment)) {
             // set the owning side to null (unless already changed)
-            if ($Comment->getUser() === $this) {
-                $Comment->setUser(null);
+            if ($comment->getUser() === $this) {
+                $comment->setUser(null);
             }
         }
 
@@ -324,4 +329,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $user;
     } */
+
+    public function getUserBanner(): ?string
+    {
+        return $this->userBanner;
+    }
+
+    public function setUserBanner(?string $userBanner): self
+    {
+        $this->userBanner = $userBanner;
+
+        return $this;
+    }
 }

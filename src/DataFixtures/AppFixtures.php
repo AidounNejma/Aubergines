@@ -36,7 +36,8 @@ class AppFixtures extends Fixture
             ->setUsername("Kristen")
             ->setEmail("admin@test.com")
             ->setPassword($password)
-            ->setUserPictures('/assets/styles/img/profile-pictures/image1.png')
+            ->setUserBanner($faker->imageUrl($width = 640, $height = 480))
+            ->setUserPictures($faker->imageUrl($width = 640, $height = 480))
             ->setRoles(['ROLE_ADMIN']);
 
         $manager->persist($adminTest);
@@ -50,10 +51,23 @@ class AppFixtures extends Fixture
             ->setUsername("Mily")
             ->setEmail("user@test.com")
             ->setPassword($password)
-            ->setUserPictures('/assets/styles/img/profile-pictures/image2.png')
+            ->setUserBanner($faker->imageUrl($width = 640, $height = 480))
+            ->setUserPictures($faker->imageUrl($width = 640, $height = 480))
             ->setRoles(['ROLE_USER']);
 
         $manager->persist($userTest);
+
+        for ($p = 0; $p < mt_rand(1, 3); $p++) {
+            $post = new Post();
+            $post->setTitle($faker->realText($maxNbChars = 50, $indexSize = 2))
+                ->setContent($faker->realText($maxNbChars = 200, $indexSize = 2))
+                ->setPicturesPost($faker->imageUrl($width = 640, $height = 480))
+                ->setPublished(1)
+                ->setUser($userTest);
+
+
+            $manager->persist($post);
+        }
 
         /* 10 utilisateurs */
         for ($u = 0; $u < 10; $u++) {
@@ -67,6 +81,7 @@ class AppFixtures extends Fixture
                 ->setUsername($faker->lastName)
                 ->setEmail($faker->email)
                 ->setPassword($hash)
+                ->setUserBanner($faker->imageUrl($width = 640, $height = 480))
                 ->setUserPictures($faker->imageUrl($width = 640, $height = 480))
                 ->setRoles(['ROLE_USER']);
 
