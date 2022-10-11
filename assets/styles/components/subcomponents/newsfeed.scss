@@ -17,7 +17,7 @@
         padding-top:3%;
         display: flex;
 
-        .profil-thumbnail-img{
+        .profile-thumbnail-img{
             margin-right: 3%;
             
             img{
@@ -27,27 +27,23 @@
                 object-fit: cover;
             }
         }
-    
-        .thumbnail-container{
-            padding-top:3%;
-            display: flex;
-    
-            .profil-thumbnail-img{
-                width: 40px;
-                height:40px;
-                left: 0%;
-                border-radius: 100px;
-                object-fit: cover;
-            }
-    
-            a.post-informations{
-                margin-left: 3%;
+
+        .post-informations{
+            margin-left: 3%;
+            
+            .pseudo, .title-post{
                 color: #000000;
-                .pseudo{
-                    font-weight: 400;
-                    font-size: 12px;
-                    line-height: 14px;
-                }
+                display: block;
+            }
+
+            .pseudo{
+                font-weight: 500;
+                font-size: 1rem;
+            }
+
+            .title-post{
+                font-weight: 300;
+                font-size: 0.9rem;
             }
         }
     }

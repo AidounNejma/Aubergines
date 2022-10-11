@@ -12,15 +12,16 @@ const NewsFeed = ({name, message, image, profile, id, post}) => {
 
                 <div className="thumbnail-container" >
                     
-                    <Link to={"/profil/" + id} className="profil-thumbnail-img">
+                    <Link to={"/profil/" + id} className="profile-thumbnail-img">
                         <img src={profile} alt=""/>
                     </Link>
 
-                    <Link to={`/post/`+ post.id} className='post-informations' style={{color : 'black'}}>
-                        <p className='pseudo'>{name}</p>   
-                        <p>{message}</p> 
-                    </Link>                     
+                    <div className='post-informations'>
+                        <Link to={"/profil/" + id} className='pseudo'>{name}</Link>   
+                        <Link to={`/post/`+ post.id} className='title-post'>{message}</Link> 
+                    </div>                     
                 </div>
+
             </div>                                                                             
         );
     };

@@ -11,6 +11,14 @@
         width: 50%;
         position: relative;
 
+        .link-to-post{
+            color: #000;
+            
+            h3{
+                padding-bottom: 1%;
+            }
+        }
+
         .icons{
             display: flex;
             position: absolute;
