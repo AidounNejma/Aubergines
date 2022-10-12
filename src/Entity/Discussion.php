@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: DiscussionRepository::class)]
-#[ApiResource]
+#[ApiResource(mercure: ['private' => true])]
 class Discussion
 {
     #[ORM\Id]
@@ -27,10 +27,15 @@ class Discussion
     #[ORM\OneToMany(mappedBy: 'discussion', targetEntity: Chat::class)]
     private Collection $chats;
 
+    #[ORM\OneToMany(mappedBy: 'discussion', targetEntity: DiscussionUsers::class)]
+    private Collection $discussionUsers;
+
     public function __construct()
     {
         $this->chats = new ArrayCollection();
         $this->createdAt = new DateTime();
+        $this->updatedAt = new DateTime();
+        $this->discussionUsers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -86,6 +91,36 @@ class Discussion
             // set the owning side to null (unless already changed)
             if ($chat->getDiscussion() === $this) {
                 $chat->setDiscussion(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, DiscussionUsers>
+     */
+    public function getDiscussionUsers(): Collection
+    {
+        return $this->discussionUsers;
+    }
+
+    public function addDiscussionUser(DiscussionUsers $discussionUser): self
+    {
+        if (!$this->discussionUsers->contains($discussionUser)) {
+            $this->discussionUsers->add($discussionUser);
+            $discussionUser->setDiscussion($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDiscussionUser(DiscussionUsers $discussionUser): self
+    {
+        if ($this->discussionUsers->removeElement($discussionUser)) {
+            // set the owning side to null (unless already changed)
+            if ($discussionUser->getDiscussion() === $this) {
+                $discussionUser->setDiscussion(null);
             }
         }
 

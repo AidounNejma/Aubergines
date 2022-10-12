@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: DiscussionUsersRepository::class)]
-#[ApiResource]
+#[ApiResource(mercure: ['private' => true])]
 class DiscussionUsers
 {
     #[ORM\Id]
@@ -15,11 +15,12 @@ class DiscussionUsers
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'discussionUsers')]
     private ?User $user = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'discussionUsers')]
     private ?Discussion $discussion = null;
+
 
     public function getId(): ?int
     {
@@ -49,4 +50,6 @@ class DiscussionUsers
 
         return $this;
     }
+
+
 }

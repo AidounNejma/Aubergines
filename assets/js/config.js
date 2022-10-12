@@ -5,3 +5,7 @@ export const COMMENTS_API = API_URL + "comments";
 export const POSTS_API = API_URL + "posts";
 export const USERS_API = API_URL + "users";
 export const LOGIN_API = API_URL + "login_check";
+export const DISCUSSION_USERS_API = API_URL + "discussion_users" ;
+export const DISCUSSIONS_API = API_URL + "discussions" ;
+export const CHAT_API = API_URL + "chats" ;
+

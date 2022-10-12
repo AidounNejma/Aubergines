@@ -61,7 +61,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Groups(['post:read', 'user:read'])]
     private ?string $userBanner = null;
 
-
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Report::class)]
     private Collection $reports;
 
@@ -77,6 +76,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Post::class)]
     private Collection $posts;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: DiscussionUsers::class)]
+    private Collection $discussionUsers;
+
     public function __construct()
     {
         $this->reports = new ArrayCollection();
@@ -85,6 +87,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->posts = new ArrayCollection();
         $this->createdAt = new DateTime();
         $this->updatedAt = new DateTime();
+        $this->discussionUsers = new ArrayCollection();
     }
     
     public function getId(): ?int
@@ -338,6 +341,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUserBanner(?string $userBanner): self
     {
         $this->userBanner = $userBanner;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, DiscussionUsers>
+     */
+    public function getDiscussionUsers(): Collection
+    {
+        return $this->discussionUsers;
+    }
+
+    public function addDiscussionUser(DiscussionUsers $discussionUser): self
+    {
+        if (!$this->discussionUsers->contains($discussionUser)) {
+            $this->discussionUsers->add($discussionUser);
+            $discussionUser->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDiscussionUser(DiscussionUsers $discussionUser): self
+    {
+        if ($this->discussionUsers->removeElement($discussionUser)) {
+            // set the owning side to null (unless already changed)
+            if ($discussionUser->getUser() === $this) {
+                $discussionUser->setUser(null);
+            }
+        }
 
         return $this;
     }

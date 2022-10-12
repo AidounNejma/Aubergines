@@ -2,11 +2,15 @@
 
 namespace App\DataFixtures;
 
+use DateTime;
+use Faker\Factory;
+use App\Entity\Chat;
 use App\Entity\Post;
 use App\Entity\User;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\Entity\Discussion;
+use App\Entity\DiscussionUsers;
 use Doctrine\Persistence\ObjectManager;
-use Faker\Factory;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
@@ -67,6 +71,32 @@ class AppFixtures extends Fixture
 
 
             $manager->persist($post);
+        }
+
+        for ($m = 0; $m < mt_rand(2, 3); $m++) {
+            $discussion = new Discussion();
+
+            $manager->persist($discussion);
+
+            for ($d = 0; $d < mt_rand(2, 3); $d++) {
+                $ds = new DiscussionUsers();
+                $ds->setDiscussion($discussion)
+                    ->setUser($userTest);
+
+                $manager->persist($ds);
+                
+                for ($c = 0; $c < mt_rand(5, 20); $c++) {
+                    $chat = new Chat();
+                    $chat->setPseudo($faker->firstName)
+                        ->setContent($faker->realText($maxNbChars = 200, $indexSize = 2))
+                        ->setUser($userTest)
+                        ->setDiscussion($discussion);
+    
+                    $manager->persist($chat);
+                    
+                }
+            }
+            
         }
 
         /* 10 utilisateurs */

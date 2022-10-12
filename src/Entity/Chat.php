@@ -9,7 +9,7 @@ use App\Repository\ChatRepository;
 use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: ChatRepository::class)]
-#[ApiResource]
+#[ApiResource(mercure: ['private' => true])]
 class Chat
 {
     #[ORM\Id]
@@ -22,12 +22,6 @@ class Chat
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
-
-    #[ORM\Column]
-    private ?int $userId = null;
-
-    #[ORM\Column]
-    private ?int $discussionId = null;
 
     #[ORM\Column]
     private ?\DateTime $createdAt = null;
@@ -44,6 +38,7 @@ class Chat
     public function __construct()
     {
         $this->createdAt = new DateTime();
+        $this->updatedAt = new DateTime();
     }
 
     public function getId(): ?int
@@ -71,30 +66,6 @@ class Chat
     public function setContent(string $content): self
     {
         $this->content = $content;
-
-        return $this;
-    }
-
-    public function getUserId(): ?int
-    {
-        return $this->userId;
-    }
-
-    public function setUserId(int $userId): self
-    {
-        $this->userId = $userId;
-
-        return $this;
-    }
-
-    public function getDiscussionId(): ?int
-    {
-        return $this->discussionId;
-    }
-
-    public function setDiscussionId(int $discussionId): self
-    {
-        $this->discussionId = $discussionId;
 
         return $this;
     }
