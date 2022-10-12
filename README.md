@@ -25,7 +25,7 @@ et la mise à jour (suite à un changement de branche par exemple) via cette com
 composer update-branch
 ```
 
-Installation Manuel des Assets :
+Installation manuelle des Assets :
 
 ```bash
 yarn install
