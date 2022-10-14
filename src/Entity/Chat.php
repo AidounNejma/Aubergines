@@ -16,6 +16,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
     types: ['https://schema.org/Chat'],
     normalizationContext: ['groups' => ['chat:read']],
     paginationClientItemsPerPage: true,
+    mercure: ['private' => true]
 )]
 
 class Chat

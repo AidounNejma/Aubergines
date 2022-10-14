@@ -4,14 +4,53 @@ import '../../styles/components/main-messenger.scss';
 import MessageFriend from './jsx-components/MessageFriend';
 import MessageUser from './jsx-components/MessageUser';
 import DateObject from "react-date-object";
+import chatAPI from '../services/chatAPI';
+import { toast } from 'react-toastify';
 
 const MainMessenger = ({discussion, user}) => {
     const [friend, setFriend] = useState([]);
     
     useEffect(() => {
         discussion.discussionUsers?.map(data=> data.user.id != user.id ? setFriend(data.user) : '');
-    }, [friend, discussion]);
+    }, [friend, discussion, user]);
     
+    /* Gérer le formulaire */
+    const [chat, setChat] = useState({
+        content: "",
+        user: '',
+        discussion: '',
+        pseudo: '',
+    });
+
+    // Gestion des changements des inputs dans le formulaire
+    const handleChange = ({ currentTarget }) => {
+        setChat({
+            content: currentTarget.value,
+            user: user['@id'],
+            discussion : discussion['@id'],
+            pseudo: user.username
+        });
+    }
+    
+    // Gestion du submit du formulaire
+    const handleSubmit = async event => {
+        event.preventDefault();
+        try {
+            await chatAPI.create(chat).then(response => console.log(response));
+
+        }
+        catch {
+            toast.error('😩 Oh une erreur est survernue!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
+    }
     return (
         <section className='main-messenger'>
 
@@ -30,17 +69,23 @@ const MainMessenger = ({discussion, user}) => {
             </div>
 
             <div className='conversation'>
-                {discussion?.chats?.map(chat => (
-                    chat?.user.id != user?.id ?
-                        <MessageFriend picture={chat?.user?.userPictures} date={new DateObject(chat?.createdAt).format('DD-MM-YYYY HH:MM')} key={chat?.id} message={chat?.content}/>
+                {discussion?.chats?.map(message => (
+                    message?.user.id != user?.id ?
+                        <MessageFriend picture={message?.user?.userPictures} date={new DateObject(message?.createdAt).format('DD-MM-YYYY HH:MM')} key={message?.id} message={message?.content}/>
                     :
-                        <MessageUser date={new DateObject(chat?.createdAt).format('DD-MM-YYYY HH:MM')} key={chat?.id} message={chat?.content}/>
+                        <MessageUser date={new DateObject(message?.createdAt).format('DD-MM-YYYY HH:MM')} key={message?.id} message={message?.content}/>
                 ))}
             </div>
 
             <div className='send-message'>
-                <form className='form-send-message'>
-                    <input type="text" className='input-message' placeholder='Tapez votre texte...' />
+                <form className='form-send-message' onSubmit={handleSubmit}>
+                    <input 
+                        type="text" 
+                        name="content"
+                        className='input-message' 
+                        placeholder='Tapez votre texte...' 
+                        onChange={handleChange}
+                    />
                     <button type='submit' className='submit-form'><FaTelegramPlane/></button>
                 </form>
             </div>
