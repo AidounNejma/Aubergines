@@ -7,27 +7,42 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\DiscussionRepository;
 use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 use Doctrine\Common\Collections\ArrayCollection;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Serializer\Filter\PropertyFilter;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: DiscussionRepository::class)]
-#[ApiResource(mercure: ['private' => true])]
+#[ApiResource(
+    types: ['https://schema.org/Discussion'],
+    normalizationContext: ['groups' => ['discussion:read']],
+    paginationClientItemsPerPage: true,
+)]
+#[ApiFilter(PropertyFilter::class)]
 class Discussion
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['discussion_users:read', 'discussion:read'])]
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Groups(['discussion:read'])]
     private ?DateTime $createdAt = null;
 
     #[ORM\Column]
+    #[Groups(['discussion:read'])]
     private ?\DateTime $updatedAt = null;
 
+    #[Groups(['discussion:read'])]
     #[ORM\OneToMany(mappedBy: 'discussion', targetEntity: Chat::class)]
     private Collection $chats;
 
+    
     #[ORM\OneToMany(mappedBy: 'discussion', targetEntity: DiscussionUsers::class)]
+    #[Groups(['discussion:read'])]
     private Collection $discussionUsers;
 
     public function __construct()

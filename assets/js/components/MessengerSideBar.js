@@ -1,18 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/components/messenger-sidebar.scss';
-import { FaAddressBook, FaArchive, FaCommentDots, FaPhoneAlt, FaPlus, FaTh } from 'react-icons/fa';
+import { FaAddressBook, FaArchive, FaCommentDots, FaPhoneAlt, FaTh } from 'react-icons/fa';
 import InputSearch from './jsx-components/InputSearch';
 import ButtonMessages from './jsx-components/ButtonMessages';
 import AlertTablet from './jsx-components/AlertTablet';
 import ButtonIcons from './jsx-components/ButtonIcons';
-import {importAll} from './functions/ImportImages';
 import ButtonCreate from './jsx-components/ButtonCreate';
 
-const MessengerSideBar = () => {
-    /* Import de mes images */
-    const profilePicture = importAll(require.context(`../../styles/img/profile-pictures`, false, /\.(png|jpe?g|svg|gif)$/));
-    const profilePictures = Object.values(profilePicture);
-
+const MessengerSideBar = ({discussions, setOneDiscussion, user}) => {
+    
     return (
         <section className='messenger-sidebar'>
             
@@ -30,7 +26,7 @@ const MessengerSideBar = () => {
                 </div>
 
                 <div className='container-icons'>
-                    <ButtonIcons icon={<FaCommentDots/>} text="Discussions"/>
+                    <ButtonIcons icon={<FaCommentDots/>} text="Discussions" onClick={()=> console.log('test')}/>
                     <ButtonIcons icon={<FaPhoneAlt/>} text="Appels"/>
                     <ButtonIcons icon={<FaAddressBook/>} text="Contacts"/>
                     <ButtonIcons icon={<FaArchive/>} text="Archivés"/>
@@ -40,13 +36,15 @@ const MessengerSideBar = () => {
             </div>
 
             <div className='wrapper-conversations'>
-                <ButtonMessages picture={profilePictures[0]} date="25 sept." number="2" name="Kristen Mackenzie" message="Ouais j'avoue c'est fou..."/>
-                <ButtonMessages picture={profilePictures[1]} date="1 aout" number="1" name="Mily Arthur" message="Saluuuut comment vas-tu ? Je..."/>
-                <ButtonMessages picture={profilePictures[2]} date="3 janv." number="" name="Julian Speed" message="Ça marche, à plus !"/>
-                <ButtonMessages picture={profilePictures[3]} date="10 oct." number="" name="Sveltlana Flasuova" message="Je vois, ça à l'air..."/>
-                <ButtonMessages picture={profilePictures[4]} date="18 dec." number="9" name="Kylie Mansour" message="Mais réponds moi bon..."/>
-                <ButtonMessages picture={profilePictures[5]} date="29 fev." number="" name="Pam Anderson" message="Yeah of course, why not..."/>
-                
+                {discussions?.map(discussion => (
+                    <ButtonMessages 
+                        number="" 
+                        discussion={discussion}
+                        user={user}
+                        key={discussion.id}
+                        setOneDiscussion={setOneDiscussion}
+                    />
+                ))}
                 <div className='wrapper-button-send-message'>
                     <ButtonCreate/>
                 </div>

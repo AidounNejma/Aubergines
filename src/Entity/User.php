@@ -26,7 +26,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['post:read', 'user:read', 'comment:read'])]
+    #[Groups(['post:read', 'user:read', 'comment:read', 'discussion_users:read', 'chat:read', 'discussion:read'])]
     private ?int $id = null;
 
     #[Groups(['post:read', 'user:read', 'comment:read'])]
@@ -45,15 +45,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank(message:"Le mot de passe est obligatoire !")]
     private ?string $password = null;
 
-    #[Groups(['post:read', 'user:read'])]
+    #[Groups(['post:read', 'user:read', 'chat:read', 'discussion:read'])]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[Groups(['post:read', 'user:read'])]
+    #[Groups(['post:read', 'user:read', 'chat:read'])]
     #[ORM\Column(length: 255)]
     private ?string $username = null;
 
-    #[Groups(['post:read', 'user:read'])]
+    #[Groups(['post:read', 'user:read', 'chat:read', 'discussion:read'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $userPictures = null;
 
@@ -76,6 +76,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Post::class)]
     private Collection $posts;
 
+    #[Groups(['user:read'])]
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: DiscussionUsers::class)]
     private Collection $discussionUsers;
 

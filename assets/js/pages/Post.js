@@ -19,10 +19,7 @@ const Post = () => {
         if(params.postId){
             try {
                 const data = await postsAPI.find(params.postId);
-                console.log(data);
                 setPost(data);
-
-                
 
             } catch (error) {
                 toast.error("Impossible de charger le post");

@@ -28,6 +28,21 @@ async function find(id) {
     });
 }
 
+async function findByDiscussion(id) {
+    const cachedChat = await Cache.get("chats." + id);
+
+    if (cachedChat) return cachedChat;
+
+    return axios.get(CHAT_API + "?discussion=" + id).then(response => {
+        const chat = response.data;
+
+        Cache.set("chats." + id, chat);
+
+        return chat;
+    });
+}
+
+
 function deleteChats(id) {
     return axios.delete(CHAT_API + "/" + id).then(async response => {
         const cachedChats = await Cache.get("chats");
@@ -75,5 +90,6 @@ export default {
     find,
     create,
     update,
-    delete: deleteChats
+    delete: deleteChats,
+    findByDiscussion
 };

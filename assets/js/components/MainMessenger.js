@@ -1,32 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaTelegramPlane } from 'react-icons/fa';
 import '../../styles/components/main-messenger.scss';
-import profilePicture from '../../styles/img/profile-pictures/image1.png';
 import MessageFriend from './jsx-components/MessageFriend';
 import MessageUser from './jsx-components/MessageUser';
+import DateObject from "react-date-object";
 
-const MainMessenger = () => {
+const MainMessenger = ({discussion, user}) => {
+    const [friend, setFriend] = useState([]);
+    
+    useEffect(() => {
+        discussion.discussionUsers?.map(data=> data.user.id != user.id ? setFriend(data.user) : '');
+    }, [friend, discussion]);
+    
     return (
         <section className='main-messenger'>
 
             <div className='header-conversation'>
-                <div className='container-picture'>
-                    <img src={profilePicture} alt="" />
-                </div>
-                <div className='container-name'>
-                    <h1 className='name-conversation'>Kristen Mackenzie</h1>
-                    <p className='sub-name-conversation'>Amis</p>
-                </div>
-                
+                {discussion?.discussionUsers &&
+                    <>
+                        <div className='container-picture'>
+                            <img src={friend?.userPictures} alt="" />
+                        </div>
+                        <div className='container-name'>
+                            <h1 className='name-conversation'>{friend?.name}</h1>
+                            <p className='sub-name-conversation'>Amis</p>
+                        </div>
+                    </>
+                }
             </div>
 
             <div className='conversation'>
-                <MessageFriend picture={profilePicture} date="16:39" message="T'as vu le dernier épisode de LOTR?"/>
-                <MessageUser date="16:41" message="Oui!!! Une dinguerie !"/>
-                <MessageFriend picture={profilePicture} date="16:42" message="C'était majestueux, franchement, je suis de plus en plus impatiente"/>
-                <MessageUser date="16:43" message="Mais same !"/>
-                <MessageUser date="16:44" message="En même temps ils avaient du budget hein"/>
-                <MessageFriend picture={profilePicture} date="16:44" message="Oui j'avoue c'est fou !"/>
+                {discussion?.chats?.map(chat => (
+                    chat?.user.id != user?.id ?
+                        <MessageFriend picture={chat?.user?.userPictures} date={new DateObject(chat?.createdAt).format('DD-MM-YYYY HH:MM')} key={chat?.id} message={chat?.content}/>
+                    :
+                        <MessageUser date={new DateObject(chat?.createdAt).format('DD-MM-YYYY HH:MM')} key={chat?.id} message={chat?.content}/>
+                ))}
             </div>
 
             <div className='send-message'>

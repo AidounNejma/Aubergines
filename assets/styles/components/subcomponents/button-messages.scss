@@ -32,11 +32,19 @@
         .message{
             color: #a7a5a5;
             padding-top: 2%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
         }
 
         .unseen-message{
             color: #000;
             font-weight: 600;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
         }
     }
 

@@ -28,6 +28,20 @@ async function find(id) {
     });
 }
 
+async function findByDiscussionUser(id) {
+    const cachedDiscussion = await Cache.get("discussions." + id);
+
+    if (cachedDiscussion) return cachedDiscussion;
+
+    return axios.get(DISCUSSIONS_API + "?discussionUsers=" + id).then(response => {
+        const discussion = response.data;
+
+        Cache.set("discussions." + id, discussion);
+
+        return discussion;
+    });
+}
+
 function deleteDiscussions(id) {
     return axios.delete(DISCUSSIONS_API + "/" + id).then(async response => {
         const cachedDiscussions = await Cache.get("discussions");
@@ -75,5 +89,6 @@ export default {
     find,
     create,
     update,
-    delete: deleteDiscussions
+    delete: deleteDiscussions,
+    findByDiscussionUser
 };

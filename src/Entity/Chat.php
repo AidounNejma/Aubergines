@@ -6,33 +6,49 @@ use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ChatRepository;
+use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ChatRepository::class)]
-#[ApiResource(mercure: ['private' => true])]
+#[ApiResource(
+    types: ['https://schema.org/Chat'],
+    normalizationContext: ['groups' => ['chat:read']],
+    paginationClientItemsPerPage: true,
+)]
+
 class Chat
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['discussion:read', 'chat:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['discussion:read', 'chat:read'])]
     private ?string $pseudo = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['discussion:read', 'chat:read'])]
     private ?string $content = null;
 
     #[ORM\Column]
+    #[Groups(['discussion:read', 'chat:read'])]
     private ?\DateTime $createdAt = null;
 
     #[ORM\Column]
+    #[Groups(['discussion:read', 'chat:read'])]
     private ?DateTime $updatedAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'chats')]
+    #[Groups(['chat:read', 'discussion:read'])]
     private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'chats')]
+    #[Groups(['chat:read'])]
+    #[ApiFilter(SearchFilter::class, strategy: 'exact')]
     private ?Discussion $discussion = null;
 
     public function __construct()
